@@ -16,4 +16,13 @@ class Key {
         $this->id = $pid;
         $this->successfactors = $psuccessfactors;
     }
+    
+    public function save() {
+        saveKey($this->id, $this->id_requirement, $this->successfactors);
+    }
+
+    public function update($pid, $pidrequirement, $psuccessfactors) {
+        updateKey($pid, $pidrequirement, $psuccessfactors);
+    }
+
 }

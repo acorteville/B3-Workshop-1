@@ -46,6 +46,11 @@ class Requirement {
         return getKeysOfRequirement($this->id);
     }
     
+    public function getClient() {
+        return getClientDetails($this->id_client);
+    }
+
+    
     public function save() {
         saveRequirement($this->title, 
                 $this->description, 
@@ -78,6 +83,5 @@ class Requirement {
                 $pid_user
         );
     }
-
 
 }
