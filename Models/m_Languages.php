@@ -1,6 +1,24 @@
 <?php
-$language = "english";
-// $language = "french";
+
+// setcookie("lang","en",time()+86400);
+//unset($_COOKIE["lang"]);
+
+$codelanguage = explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
+
+if(isset($_COOKIE['lang'])) {
+    $codelanguage = $_COOKIE['lang'];
+}
+
+switch ($codelanguage) {
+    case 'fr':
+        $language = "french";
+        break;
+
+    default:
+        $language = "english";
+        break;
+}
+
 
 $text['english']['site_title'] = "GFI HomePage";
 $text['english']['description'] = "Description";
