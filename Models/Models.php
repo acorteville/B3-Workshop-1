@@ -90,5 +90,13 @@ function updateKey($pid, $pidrequirement, $psuccessfactors) {
     global $pdo;
     $sql = "UPDATE `keys` SET `id` = '".$pid."', `id_requirement` = '".$pidrequirement."', `successfactors` = '".$psuccessfactors."' WHERE `id` = '".$pid."';";
     $result = $pdo->prepare($sql);
-    return $result->execute();
+    return $result->execute();    
+}
+
+function loginUser($email) {
+    global $pdo;
+    $sql = "SELECT * FROM users where email = '".$email."'";
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    return $result->fetchAll();
 }
