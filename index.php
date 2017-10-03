@@ -19,7 +19,9 @@ $pdo = Pdom::getMonPdo();
 $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
 
-if($idUserConnected){
+<<<<<<< Upstream, based on origin/master
+=======
+if($idUserConnected) {
     switch ($control) {
         case 'c_home':
             require 'Views/Template/v_top.php';
@@ -44,10 +46,14 @@ if($idUserConnected){
             session_destroy();
             header('Location: '.BASESITE);
             break;
-            
+        
+        default:
+            require 'Views/Template/v_top.php';
+            echo $text[$language]['problem'];
+            require 'Views/Template/v_foot.php';
+            break;
     }
-        
-        
+            
 } else {
     require 'Controlers/c_loginForm.php';
 }
