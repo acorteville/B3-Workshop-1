@@ -19,8 +19,6 @@ $pdo = Pdom::getMonPdo();
 $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
 
-<<<<<<< Upstream, based on origin/master
-=======
 if($idUserConnected) {
     switch ($control) {
         case 'c_home':
