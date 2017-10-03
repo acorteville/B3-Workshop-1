@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule ^logout\.html$ ?control=c_logout
+RewriteRule ^new-requirement\.html$ ?control=c_newRequirement
+RewriteRule ^requirement-details-([0-9])\.html$ ?control=c_detailsRequirement&id=$1

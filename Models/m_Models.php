@@ -37,7 +37,10 @@ function getFilesOfRequirement($pidRequirement) {
     $result->execute();
     $files = array();
     foreach($result as $aLine) {
-        $files[] = new File($aLine['id_requirement'], $aLine['id'], $aLine['name']);
+        $files[] = new File($aLine['id_requirement'], 
+                $aLine['id'], 
+                $aLine['name']
+        );
     }
     return $files;
 }
@@ -49,7 +52,10 @@ function getKeysOfRequirement($pidRequirement) {
     $result->execute();
     $keys = array();
     foreach($result as $aLine) {
-        $keys[] = new Key($aLine['id_requirement'], $aLine['id'], $aLine['successfactors']);
+        $keys[] = new Key($aLine['id_requirement'], 
+                $aLine['id'], 
+                $aLine['successfactors']
+        );
     }
     return $keys;
 }
@@ -93,10 +99,16 @@ function updateKey($pid, $pidrequirement, $psuccessfactors) {
     return $result->execute();    
 }
 
-function loginUser($email) {
+function loginUser($pemail) {
     global $pdo;
-    $sql = "SELECT * FROM users where email = '".$email."'";
+    $sql = "SELECT id, name, lastname, email FROM `users` WHERE `email` = '".$pemail."'";
     $result = $pdo->prepare($sql);
     $result->execute();
-    return $result->fetchAll();
+    $result = $result->fetch();
+    if($result !== FALSE) {
+        return new User($result['id'], $result['name'], $result['lastname'], $result['email']);
+    } else {
+        return FALSE;
+    }
+    
 }

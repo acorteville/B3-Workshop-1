@@ -13,8 +13,15 @@ class Pdom
      * pour toutes les méthodes de la classe
      */
     private function __construct(){
-        Pdom::$monPdo = new PDO(Pdom::$serveur.';'.Pdom::$bdd, Pdom::$user, Pdom::$leMdp);
-        Pdom::$monPdo->query("SET CHARACTER SET utf8");
+        try {
+            Pdom::$monPdo = new PDO(Pdom::$serveur.';'.Pdom::$bdd, Pdom::$user, Pdom::$leMdp);
+            Pdom::$monPdo->query("SET CHARACTER SET utf8");
+        } catch (Exception $e) {
+            echo "Echec de la connexion";
+            echo "<hr />";
+            echo $e->getMessage();
+            die;
+        }
 
     }
     public function _destruct(){

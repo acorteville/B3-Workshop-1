@@ -8,7 +8,7 @@
                     <?php foreach ($requirements as $aRequirement) { ?>
                     <li class="list-group-item active listeli" >
                         <h6 class="list-group-item-heading"><?php echo $aRequirement->title; ?></h6>
-                        <p class="list-group-item-text"><?php echo $aRequirement->getClient()->corporatename; ?> - 03/10/2017</p>
+                        <p class="list-group-item-text"><?php echo $aRequirement->getClient()->corporatename; ?> - <?php echo $aRequirement->creationdate; ?></p>
                         <span class="listeboutton">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                             <i class="fa fa-trash" aria-hidden="true"></i>
