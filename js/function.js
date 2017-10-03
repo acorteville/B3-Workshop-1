@@ -6,20 +6,14 @@
           var email = $("#email").val();
           console.log(email );
           $.ajax({
-            url: "http://127.0.0.1/B3-Workshop-1/Models.php",
+            url: "http://127.0.0.1/B3-Workshop-1/Models/Models.php",
             function : loginUser,
             param : {
                 email : email
             },
             success: function(data)
             {
-                if (data !=  false) {
-                    console.log(" connexion 1 ");
-                }
-                   else
-                 { 
-                     console.log("pb connexion");
-                 }
+                console.log(data);
             },
             fail : function(data)
             {

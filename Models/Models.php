@@ -44,9 +44,10 @@ function updateRequirement($pid, $ptitle, $pdescription, $pcreationdate, $pstart
     return $result->execute();
 }
 
-function loginUser($pMail) {
+function loginUser($email) {
     global $pdo;
-    $sql = "SELECT * FROM user where email = '".$pMail."')";
+    $sql = "SELECT * FROM users where email = '".$email."'";
     $result = $pdo->prepare($sql);
-    return $result->execute();
+    $result->execute();
+    return $result->fetchAll();
 }

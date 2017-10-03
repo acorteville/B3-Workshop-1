@@ -2,9 +2,9 @@
 class Pdom
 {
     private static $serveur='mysql:host=localhost';
-    private static $user='root';
-    private static $bdd='dbname=pojet-gfi';
-    private static $leMdp='root';
+    private static $user='admin';
+    private static $bdd='dbname=projet-gfi';
+    private static $leMdp='AzertY!59000';
     private static $monPdo;
     private static $monPdoGFI = null;
 
