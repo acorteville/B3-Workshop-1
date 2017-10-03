@@ -8,11 +8,18 @@ and open the template in the editor.
     Author     : Baboon
 */
 
-/*<editor-fold desc="PAGE LOGIN">
---------------------------------*/
+
 html, body{
     height: 100%;
 }
+.container{
+    display:block;
+    background-color:#f6f6f6;
+    min-height: 100%;
+    max-width: 100%;
+}
+/*<editor-fold desc="PAGE LOGIN">
+--------------------------------*/
 .logincontent{
     background-color: #31374a;
     position: relative;
@@ -59,7 +66,62 @@ html, body{
 .forgotpassword{
     color: #fd8224;
     display: block;
-    text-align: right;
-    margin-right: 10%;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+@media (min-width: 1025px)
+{
+    .formlogin{
+        width: 30%;
+    }
+    .loginline {
+        width: 45%;
+    }
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="PAGE LISTE BESOIN">
+---------------------------------------*/
+
+.header{
+    background-color: #31374a;
+    width: 100%;
+    height: 50px;
+}
+.listetitle{
+    display: block;
+    color: #fd8224;
+    margin: 0 auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.btnajout, .btndisconnect{
+    display: block;
+    float:right;
+    margin-top: 3px;
+    margin-right: 15px;
+    color: #fd8224;
+}
+
+.searchbar{
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 80%;
+}
+.listeul{
+    width:100%;
+    margin: 0 auto;
+    padding-left: 0px;
+}
+.listeli{
+    background-color: #fff !important;
+    color: #17171a !important;
+    margin-bottom: 10px;
+    border-color: #fff !important;
+    border-radius: 10px;
+    font-size: 13px;
 }
 /*</editor-fold>*/
