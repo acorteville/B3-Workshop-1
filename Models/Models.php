@@ -43,3 +43,10 @@ function updateRequirement($pid, $ptitle, $pdescription, $pcreationdate, $pstart
     $result = $pdo->prepare($sql);
     return $result->execute();
 }
+
+function loginUser($pMail) {
+    global $pdo;
+    $sql = "SELECT * FROM user where email = '".$pMail."')";
+    $result = $pdo->prepare($sql);
+    return $result->execute();
+}
