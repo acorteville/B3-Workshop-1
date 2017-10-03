@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 include_once '../Classes/Client.php';
 include_once '../Classes/Contact.php';
@@ -20,13 +20,17 @@ if(isset($_POST['email']) && $_POST['email'] != "")
     //var_dump($data); 
     if(empty($data))
     {
-        header("Location: http://127.0.0.1/B3-Workshop-1/template/login.html");
+        header("Location: http://127.0.0.1/B3-Workshop-1/index.html");
     }
     else
     {
         $_SESSION['email'] = $data['email']; 
         $_SESSION['idSession'] = $data['id']; 
-        header("Location: http://127.0.0.1/B3-Workshop-1/template/listebesoin.html");
+        header("Location: http://127.0.0.1/B3-Workshop-1/listebesoin.php");
     }
+}
+else
+{
+    header("Location: http://127.0.0.1/B3-Workshop-1/index.html");
 }
 //echo $_POST['email'];

@@ -15,17 +15,27 @@ $pdo = Pdom::getMonPdo();
 
 $control = isset($_GET['control']) ? $_GET['control'] : 'home';
 
-require 'Views/Template/head.php';
 
-switch ($control) {
-    case 'home':
-        require 'Controlers/requirementsList.php';
-        require 'Views/requirementsList.php';
+if(isset($_SESSION['email']))
+    { if (isset($_SESSION['idSession']))
+        {
+            switch ($control) {
+            case 'home':
+                require 'Views/Template/head.php';
+                require 'Controlers/requirementsList.php';
+                require 'Views/requirementsList.php';
+                require 'Views/Template/foot.php';
+                break;
 
-        break;
+            default:
+                break;
+            }
+            
+        }
+        else
+            {
+                require 'Controlers/login.php';
+                //require 'Views/requirementsList.php';
+            }
+    }
 
-    default:
-        break;
-}
-
-require 'Views/Template/foot.php';
