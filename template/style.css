@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 oct. 2017, 18:39:40
+    Author     : Baboon
+*/
+
+/*<editor-fold desc="PAGE LOGIN">
+--------------------------------*/
+html, body{
+    height: 100%;
+}
+.logincontent{
+    background-color: #31374a;
+    position: relative;
+    display: block;
+    min-height: 100%;
+}
+.loginlogo{
+    display:block;
+    margin: 0 auto;
+}
+.loginline{
+    width:80%;
+    border-top: 2px solid #fd8224;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.formlogin{
+    display:block;
+    margin: 0 auto;  
+    width:80%;
+}
+.loginfield{
+    width:100%;
+    max-width: inherit;
+    margin-bottom: 20px;
+}
+.logintext{
+    border:1px solid #fd8224;
+    color:white;
+    background-color: #31374a;
+}
+.loginbutton{
+    display:block;
+    width: 150px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #fd8224;
+    color:#fff;
+}
+
+.forgotpassword{
+    color: #fd8224;
+    display: block;
+    text-align: right;
+    margin-right: 10%;
+}
+/*</editor-fold>*/
