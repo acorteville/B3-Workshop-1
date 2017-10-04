@@ -22,13 +22,7 @@
                   <input type="text" class="form-control" name="description" required placeholder="<?php echo $text[$language]['description']; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="3mainkey1" required placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="3mainkey2" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="3mainkey3" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
+                    <textarea class="form-control" name="3mainkey1" maxRows="3"  rows="3"  required placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
                 </div>
                 <div class="form-group">
                   <input type="date" class="form-control" name="datelastest" required placeholder="<?php echo $text[$language]['start_at_the_latest']; ?>">
@@ -46,7 +40,7 @@
                   <input type="number" class="form-control" name="rate"  required placeholder="<?php echo $text[$language]['rate']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="consultantname" required placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
+                  <input type="email" class="form-control" name="consultantname" required placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
                 </div>
                 <div class="form-group">
                     <select name="statut" required class="form-control">
