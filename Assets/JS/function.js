@@ -1,29 +1,104 @@
     $( document ).ready(function() {
-      /*  console.log( "document loaded" );
+        console.log( "document loaded" );
         
-        $("#connexion").off("click.ad").on( "click.ad", function() 
+        $("i.icontrash").off("click.ad").on( "click.ad", function() 
         {
-          var email = $("#email").val();
-          console.log(email );
+         // var email = $("#email").val();
+          console.log("ok" );
+          var url1 = "Models/m_Models.php";
           $.ajax({
-            url: "http://127.0.0.1/B3-Workshop-1/Models/Models.php",
-            function : loginUser,
-            param : {
-                email : email
-            },
-            success: function(data)
-            {
-                console.log(data);
-            },
-            fail : function(data)
-            {
-                console.log(data);
-            },
-            default: function()
-            {
-                console.log("def");
-            }
-         });
+            url: url1,
+            type:'POST',
+            data: {
+             fonction:'removeRequirement',
+             params: {id : id}
+       },
+             success: function(data)
+             {
+              /*  if (data !=  false) {
+                  $("#form")[0].reset();
+                  $("#sucess").removeClass("hide");
+                  setTimeout(
+                    function() 
+                    {
+                      $("#sucess").addClass("hide");
+                    }, 5000);
+                  //$("#sucess").addClass("hide");
+                }
+                else
+                {
+                    $("#problem").removeClass("hide");
+                    setTimeout(
+                    function() 
+                    {
+                      $("#problem").addClass("hide");
+                    }, 5000);
+                } */
+              }
+           });       
         }); 
-        console.log('meuh'); */
+        //console.log('meuh'); 
     });
+    /*
+$(window).load(function(){
+
+     
+    
+      $(".clikToAdd").click(function() {
+      
+      var raison   = $("#raison").val();
+      var titre  = $("#titre2").val();
+      var descritpif  = $("#descritpif").val();
+      var urgence  = $("#urgence").val();
+      
+      var delay = ( function() {
+            var timer = 0;
+            return function(callback, ms) {
+                clearTimeout (timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+      
+      console.log("raison : " + raison + " titre : " +titre + " descriptif : " + descritpif + " urgence : " + urgence )
+      
+          $.ajax({
+            url: 'include/functions.php',
+            type:'POST',
+            data: {
+             fonction:'addToDo',
+             params: {raison: raison, titre: titre, descritpif: descritpif, urgence: urgence}
+       },
+             success: function(data)
+             {
+                if (data !=  false) {
+                  $("#form")[0].reset();
+                  $("#sucess").removeClass("hide");
+                  setTimeout(
+                    function() 
+                    {
+                      $("#sucess").addClass("hide");
+                    }, 5000);
+                  //$("#sucess").addClass("hide");
+                }
+                else
+                {
+                    $("#problem").removeClass("hide");
+                    setTimeout(
+                    function() 
+                    {
+                      $("#problem").addClass("hide");
+                    }, 5000);
+                }
+              }
+           });        
+      
+    })
+    })
+    
+    function wait(ms){
+        var start = new Date().getTime();
+        var end = start;
+        while(end < start + ms) {
+          end = new Date().getTime();
+       }
+     }*/
