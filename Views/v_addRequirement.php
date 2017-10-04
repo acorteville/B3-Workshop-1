@@ -31,7 +31,7 @@
                   <input type="text" class="form-control" id="rate" placeholder="<?php echo $text[$language]['rate']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="consultantname" placeholder="<?php echo $text[$language]['frequency']; ?>">
+                  <input type="text" class="form-control" id="consultantname" placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
                 </div>
                 <div class="form-group">
                     <select class="form-control">

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 // setcookie("lang","en",time()+86400);
@@ -30,7 +29,7 @@ $text['english']['3minkey'] = "3 main key success factors";
 $text['english']['date'] = "Date";
 $text['english']['title'] = "Title";
 $text['english']['duration'] = "Duration";
-$text['english']['frequency'] = "working frequency";
+$text['english']['frequency'] = "Working frequency";
 $text['english']['location'] = "Location";
 $text['english']['rate'] = "Rate";
 $text['english']['Save_and_share'] = "Save and share";
@@ -42,7 +41,7 @@ $text['english']['addrequirement'] = "Add a requirement";
 $text['english']['cancel'] = "Cancel";
 $text['english']['saveandshare'] = "Save & Share";
 $text['english']['newrequirement'] = "New requirement";
-
+$text['english']['consultantsemails'] = "Consultants' emails";
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -66,4 +65,5 @@ $text['french']['addrequirement'] = "Ajouter une expression de besoin";
 $text['french']['cancel'] = "Annuler";
 $text['french']['saveandshare'] = "Sauvegarder et partager";
 $text['french']['newrequirement'] = "Nouveau besoin";
+$text['french']['consultantsemails'] = "Emails des consultants";
 
