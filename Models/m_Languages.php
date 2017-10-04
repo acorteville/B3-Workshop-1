@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 // setcookie("lang","en",time()+86400);
@@ -65,5 +66,4 @@ $text['french']['addrequirement'] = "Ajouter une expression de besoin";
 $text['french']['cancel'] = "Annuler";
 $text['french']['saveandshare'] = "Sauvegarder et partager";
 $text['french']['newrequirement'] = "Nouveau besoin";
-
 
