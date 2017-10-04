@@ -13,4 +13,5 @@ if(isset($_POST['email']) && $_POST['email'] != "")
 require 'Views/Template/v_top.php';
 require 'Views/v_loginForm.php';
 require 'Views/Template/v_foot.php';
+require 'Views/Template/v_bottom.php';
 

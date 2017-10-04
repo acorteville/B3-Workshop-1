@@ -1,5 +1,5 @@
 <div class="logincontent">
-    <img src="<?php echo BASESITE; ?>Assets/IMG/logogfi.png" alt="logogfi" class="loginlogo">
+    <img src="<?php echo BASESITE; ?>Assets/IMG/logo.png" alt="logogfi" class="loginlogo">
     <hr class="loginline">
     <form class="formlogin" action="./" method="POST">
         <div class="col-sm-10 loginfield">

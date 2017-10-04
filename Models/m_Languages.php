@@ -38,7 +38,9 @@ $text['english']['requirementslist'] = "List of Requirements";
 $text['english']['logout'] = "Log Out";
 $text['english']['problem'] = "Oops, Houston we've had a problem!";
 $text['english']['addrequirement'] = "Add a requirement";
-$text['english']['langversion'] = "English version";
+$text['english']['cancel'] = "Cancel";
+$text['english']['saveandshare'] = "Save & Share";
+$text['english']['newrequirement'] = "New requirement";
 
 
 
@@ -60,6 +62,8 @@ $text['french']['requirementslist'] = "Liste des Besoins";
 $text['french']['logout'] = "Déconnexion";
 $text['french']['problem'] = "Oups, Houston nous avons un problème!";
 $text['french']['addrequirement'] = "Ajouter une expression de besoin";
-$text['french']['langversion'] = "Version Française";
+$text['french']['cancel'] = "Annuler";
+$text['french']['saveandshare'] = "Sauvegarder et partager";
+$text['french']['newrequirement'] = "Nouveau besoin";
 
 

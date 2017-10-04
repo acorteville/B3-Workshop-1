@@ -47,10 +47,10 @@
                 </div>
                 <div class="btnfix">
                     <div class="btncancel">
-                        <button type="button" onclick="window.location.href='<?php echo BASESITE; ?>'" class="btn btn-default">Cancel</button>
+                        <button type="button" onclick="window.location.href='<?php echo BASESITE; ?>'" class="btn btn-default"><?php echo $text[$language]['cancel']; ?></button>
                     </div>
                     <div class="btnsaveandshare">
-                        <button type="submit" class="btn btn-default">Save & Share</button>
+                        <button type="submit" class="btn btn-default"><?php echo $text[$language]['saveandshare']; ?></button>
                     </div>
                
                 </div>
