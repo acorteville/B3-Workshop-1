@@ -1,6 +1,6 @@
 RewriteEngine On
 
 RewriteRule ^logout\.html$ ?control=c_logout
-RewriteRule ^new-requirement\.html$ ?control=c_newRequirement
+RewriteRule ^new-requirement\.html$ ?control=c_addRequirement
 RewriteRule ^requirement-details-([0-9])\.html$ ?control=c_detailsRequirement&id=$1
 RewriteRule ^lang-([a-z]+)\.html$ ?control=c_changeLanguage&lang=$1

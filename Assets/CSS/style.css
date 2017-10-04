@@ -10,20 +10,21 @@ and open the template in the editor.
 
 
 html, body{
-    background-color: #31374a;
+    height: 100%;
 }
 .container{
     display:block;
     background-color:#f6f6f6;
     min-height: 100%;
     max-width: 100%;
-    padding-bottom: 20px;
 }
 /*<editor-fold desc="PAGE LOGIN">
 --------------------------------*/
 .logincontent{
+    background-color: #31374a;
     position: relative;
     display: block;
+    min-height: 100%;
 }
 .loginlogo{
     display:block;
@@ -86,13 +87,13 @@ html, body{
 .header{
     background-color: #31374a;
     width: 100%;
-    height: 50px;
 }
 .listetitle{
     display: block;
     color: #fd8224;
     margin: 0 auto;
-    padding-top: 10px;
+    
+    padding: 16px 0;
     text-align: center;
 }
 
@@ -122,10 +123,98 @@ html, body{
     border-color: #fff !important;
     border-radius: 10px;
     font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.statut{
+    display: inline-block;
+    width: 40px;;
+}
+.statuticon{
+    color: #fd8224;
+}
+.titleclient{
+    display: inline-block;
+    min-width: 150px;
+}
+.tittleRequirement{
+    display:block;
+    
+}
+.nameclient{
+    display: block;
+    position:relative;
+    font-size:12px;
+}
+.daterequirement{
+    display: block;
+    
+}
+.listeboutton{
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    text-align: left;
+    float: right;
+}
+.iconpencil{
+    display: inline-block;
+    margin-right: 20px;
+        
+}
+.icontrash{
+    display: inline-block;
 }
 /*</editor-fold>*/
+
+/*<editor-fold desc="PAGE AJOUT BESOINS">
+----------------------------------------*/
+.contentajoutbesoin{
+    padding-bottom: 100px;
+    padding-top: 25px;
+}
+.btnfix{
+    position: fixed;
+    bottom: 0px;
+    left:0px;
+    background-color: #31374a;
+    width: 100%;
+    height: 75px;
+    
+}
+.btncancel{
+    display: inline-block;
+    position: relative;
+    width: 49%;
+    padding-top: 15px;
+    max-width: 500px;
+
+}
+.btncancel .btn{
+    display: block;
+    margin: 0 auto;
+}
+.btnsaveandshare{
+    display: inline-block;  
+    position: relative;
+    width:49%;
+    padding-top: 15px;
+    max-width: 500px;
+
+}
+.btnsaveandshare .btn{
+    display: block;
+    margin: 0 auto;
+    background-color: #fd8224;
+}
+/*</editor-fold>*/
+
+
+
 footer {
-    color: #596382;
+    color: #212635;
     padding: 24px;
     font-size: 13px;
 }

@@ -27,7 +27,9 @@ $text['english']['contact_name'] = "Contact";
 $text['english']['start_at_the_latest'] = "Start at the latest";
 $text['english']['3minkey'] = "3 main key success factors";
 $text['english']['date'] = "Date";
+$text['english']['title'] = "Title";
 $text['english']['duration'] = "Duration";
+$text['english']['frequency'] = "working frequency";
 $text['english']['location'] = "Location";
 $text['english']['rate'] = "Rate";
 $text['english']['Save_and_share'] = "Save and share";
@@ -47,7 +49,9 @@ $text['french']['contact_name'] = "Contact";
 $text['french']['start_at_the_latest'] = "Commencement au plus tard";
 $text['french']['3minkey'] = "3 facteurs clés de succès";
 $text['french']['date'] = "Date";
+$text['french']['title'] = "Titre";
 $text['french']['duration'] = "Durée";
+$text['french']['frequency'] = "Fréquence de travail";
 $text['french']['location'] = "Localisation";
 $text['french']['rate'] = "Prix";
 $text['french']['Save_and_Share'] = "Sauvegarder et partager";
@@ -57,3 +61,5 @@ $text['french']['logout'] = "Déconnexion";
 $text['french']['problem'] = "Oups, Houston nous avons un problème!";
 $text['french']['addrequirement'] = "Ajouter une expression de besoin";
 $text['french']['langversion'] = "Version Française";
+
+

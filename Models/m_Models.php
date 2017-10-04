@@ -5,6 +5,10 @@
  * and open the template in the editor.
  */
 
+function formatDate($date) {
+    return date('d/m/Y', strtotime($date));
+}
+
 function getRequirements() {
     global $pdo;
     $sql = "SELECT * FROM `requirements`";

@@ -18,6 +18,7 @@ $pdo = Pdom::getMonPdo();
 
 $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
+$userConnected = loginUser($_SESSION['email']);
 
 if($control == "c_changeLanguage") {
             require 'Controlers/c_changeLanguage.php';
@@ -27,23 +28,30 @@ if($idUserConnected) {
     switch ($control) {
         case 'c_home':
             require 'Views/Template/v_top.php';
-            require 'Views/Template/v_head.php';
+            require 'Views/Template/v_head-list.php';
             require 'Controlers/c_requirementsList.php';
             require 'Views/Template/v_foot.php';
             break;
         
         case 'c_detailsRequirement':
             require 'Views/Template/v_top.php';
-            require 'Views/Template/v_head.php';
+            require 'Views/Template/v_head-list.php';
             require 'Views/Template/v_foot.php';
             break;
         
         case 'c_newRequirement':
             require 'Views/Template/v_top.php';
-            require 'Views/Template/v_head.php';
+            require 'Views/Template/v_head-list.php';
             require 'Views/Template/v_foot.php';
             break;
-                
+
+        case 'c_addRequirement':
+            require 'Views/Template/v_top.php';
+            require 'Views/Template/v_head-new.php';
+            require 'Controlers/c_addRequirement.php';
+            require 'Views/Template/v_foot.php';
+            break;
+
         case 'c_logout':
             session_destroy();
             header('Location: '.BASESITE);
