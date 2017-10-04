@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['email']) && $_POST['email'] != "")
 {    
-    $userConnected = loginUser($_POST['email']);
+    $userConnected = loginUser($_POST['email']."@gfi.com");
+        
     if($userConnected !== FALSE) {
         $_SESSION['email'] = $userConnected->email;
         $_SESSION['idSession'] = $userConnected->id;

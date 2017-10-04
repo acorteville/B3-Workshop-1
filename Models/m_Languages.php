@@ -42,6 +42,8 @@ $text['english']['cancel'] = "Cancel";
 $text['english']['saveandshare'] = "Save & Share";
 $text['english']['newrequirement'] = "New requirement";
 $text['english']['consultantsemails'] = "Consultants' emails";
+$text['english']['name'] = "name";
+$text['english']['lastname'] = "lastname";
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -66,4 +68,6 @@ $text['french']['cancel'] = "Annuler";
 $text['french']['saveandshare'] = "Sauvegarder et partager";
 $text['french']['newrequirement'] = "Nouveau besoin";
 $text['french']['consultantsemails'] = "Emails des consultants";
+$text['french']['name'] = "nom";
+$text['french']['lastname'] = "prénom";
 

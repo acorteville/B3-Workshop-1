@@ -24,6 +24,13 @@
 
                     <?php } ?>
                 </ul>
+                <div class="row" style="width: 400px; margin: 0 auto">
+                    <?php if($page > 1) { ?>
+                    <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page - 1; ?>.html" class="button ">Précédent</a><div class="fix"></div></div>
+                    <?php } if(count(getRequirements($page + 1, $nbperpage)) > 0) { ?>
+                        <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page + 1; ?>.html" class="button">Suivant</a><div class="fix"></div></div>                        
+                    <?php } ?>
+                </div>
             </div>
         </div>
 

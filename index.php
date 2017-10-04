@@ -20,6 +20,7 @@ $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
+
 if(isset($_SESSION['email'])) {
     $userConnected = loginUser($_SESSION['email']);
 }
