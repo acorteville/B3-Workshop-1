@@ -18,7 +18,9 @@ $pdo = Pdom::getMonPdo();
 
 $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
-$userConnected = loginUser($_SESSION['email']);
+if(isset($_SESSION['email'])) {
+    $userConnected = loginUser($_SESSION['email']);
+}
 
 if($control == "c_changeLanguage") {
             require 'Controlers/c_changeLanguage.php';
@@ -31,18 +33,21 @@ if($idUserConnected) {
             require 'Views/Template/v_head-list.php';
             require 'Controlers/c_requirementsList.php';
             require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
             break;
         
         case 'c_detailsRequirement':
             require 'Views/Template/v_top.php';
             require 'Views/Template/v_head-list.php';
             require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
             break;
         
         case 'c_newRequirement':
             require 'Views/Template/v_top.php';
             require 'Views/Template/v_head-list.php';
             require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
             break;
 
         case 'c_addRequirement':
@@ -50,6 +55,7 @@ if($idUserConnected) {
             require 'Views/Template/v_head-new.php';
             require 'Controlers/c_addRequirement.php';
             require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
             break;
 
         case 'c_logout':
@@ -61,6 +67,7 @@ if($idUserConnected) {
             require 'Views/Template/v_top.php';
             echo $text[$language]['problem'];
             require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
             break;
     }
             

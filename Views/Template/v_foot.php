@@ -7,5 +7,3 @@
             </nav>
             <p id="copyright">© 2017 - Une réalisation du groupe 4</p>
         </footer>
-    </body>
-</html>
