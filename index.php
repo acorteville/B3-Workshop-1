@@ -19,6 +19,10 @@ $pdo = Pdom::getMonPdo();
 $control = isset($_GET['control']) ? $_GET['control'] : 'c_home';
 $idUserConnected = isset($_SESSION['email']) ? (string) $_SESSION['email'] : FALSE;
 
+if($control == "c_changeLanguage") {
+            require 'Controlers/c_changeLanguage.php';
+}
+
 if($idUserConnected) {
     switch ($control) {
         case 'c_home':
@@ -39,7 +43,7 @@ if($idUserConnected) {
             require 'Views/Template/v_head.php';
             require 'Views/Template/v_foot.php';
             break;
-        
+                
         case 'c_logout':
             session_destroy();
             header('Location: '.BASESITE);

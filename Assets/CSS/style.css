@@ -10,21 +10,20 @@ and open the template in the editor.
 
 
 html, body{
-    height: 100%;
+    background-color: #31374a;
 }
 .container{
     display:block;
     background-color:#f6f6f6;
     min-height: 100%;
     max-width: 100%;
+    padding-bottom: 20px;
 }
 /*<editor-fold desc="PAGE LOGIN">
 --------------------------------*/
 .logincontent{
-    background-color: #31374a;
     position: relative;
     display: block;
-    min-height: 100%;
 }
 .loginlogo{
     display:block;
@@ -125,3 +124,24 @@ html, body{
     font-size: 13px;
 }
 /*</editor-fold>*/
+footer {
+    color: #596382;
+    padding: 24px;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+}
+
+footer nav ul {
+    margin: 0;
+}
+
+footer nav ul li {
+    list-style: none;
+    display: block;
+    float: left;
+    margin: 0 12px 0 0;
+}
