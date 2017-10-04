@@ -52,7 +52,7 @@ class Requirement {
 
     
     public function save() {
-        saveRequirement($this->title, 
+        return saveRequirement($this->title, 
                 $this->description, 
                 $this->creationdate, 
                 $this->startlastdate, 

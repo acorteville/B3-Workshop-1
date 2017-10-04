@@ -9,9 +9,10 @@ function formatDate($date) {
     return date('d/m/Y', strtotime($date));
 }
 
-function getRequirements() {
+function getRequirements($ppage, $pnbperpage) {
+    $minRange = ($ppage - 1) * $pnbperpage;
     global $pdo;
-    $sql = "SELECT * FROM `requirements`";
+    $sql = "SELECT * FROM `requirements` ORDER BY id DESC LIMIT ".$minRange.", ".$pnbperpage;
     $result = $pdo->prepare($sql);
     $result->execute();
     $requirements = array();
@@ -32,6 +33,18 @@ function getRequirements() {
         );
     }
     return $requirements;
+}
+
+function getClients() {
+    global $pdo;
+    $sql = "SELECT * FROM `clients`";
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $clients = array();
+    foreach($result as $aLine) {
+        $clients[] = new Client($aLine['id'], $aLine['corporatename']);
+    }
+    return $clients;
 }
 
 function getFilesOfRequirement($pidRequirement) {
@@ -78,7 +91,8 @@ function saveRequirement($ptitle, $pdescription, $pcreationdate, $pstartlastdate
     global $pdo;
     $sql = "INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`) VALUES (NULL, '".$ptitle."', '".$pdescription."', now(), '".$pstartlastdate."', '".$pduration."', '".$pfrequency."', '".$pmanuelcoord."', '".$pgeocoord."', '".$prate."', '".$pstatus."', '".$pid_user."', '".$pid_client."');";
     $result = $pdo->prepare($sql);
-    return $result->execute();
+    $result->execute();
+    return $pdo->lastInsertId();
 }
 
 function updateRequirement($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user) {

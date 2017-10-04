@@ -179,7 +179,7 @@ html, body{
     width: 100%;
     text-align: center;
     margin: 32px auto;
-    width: 50%;
+    width: 90%;
     border-radius: 4px;
     border: 3px solid #efefef;
 }
@@ -188,7 +188,6 @@ html, body{
 .btncancel{
     display: inline-block;
     position: relative;
-    width: 50%;
     padding: 12px 0 0;
 
 }
@@ -199,14 +198,12 @@ html, body{
 .btnsaveandshare{
     display: inline-block;  
     position: relative;
-    width:50%;
     padding: 12px 0;
 
 
 }
 .btnsaveandshare .btn{
     display: block;
-    margin: 0 auto;
     background-color: #fd8224;
 }
 /*</editor-fold>*/
