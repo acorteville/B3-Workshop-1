@@ -1,55 +1,64 @@
         <div class="container contentajoutbesoin">
-            <form>
+            <form action="new-requirement.html" method="POST">
+                
                 <div class="form-group">
-                  <input type="text" class="form-control" name="client" placeholder="<?php echo $text[$language]['client']; ?>">
+                    <select name="client" required class="form-control">
+                        <?php 
+                        foreach ($clients as $client) {
+                            echo "<option value='".$client->id."'>";
+                            echo $client->corporatename;
+                            echo "</option>";
+
+                        } ?>
+                    </select>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="contactname" placeholder="<?php echo $text[$language]['contact_name']; ?>">
+                  <input type="text" class="form-control" name="contactname" required placeholder="<?php echo $text[$language]['contact_name']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="title" placeholder="<?php echo $text[$language]['title']; ?>">
+                  <input type="text" class="form-control" name="title" required placeholder="<?php echo $text[$language]['title']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="description" placeholder="<?php echo $text[$language]['description']; ?>">
+                  <input type="text" class="form-control" name="description" required placeholder="<?php echo $text[$language]['description']; ?>">
                 </div>
                 <div class="form-group">
-                    <textarea  style="margin: 32px 0 0;" class="form-control" name="3mainkey" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
+                    <textarea class="form-control" name="3mainkey1" required placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" inamed="3mainkey" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
+                    <textarea class="form-control" name="3mainkey2" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="3mainkey" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
+                    <textarea class="form-control" name="3mainkey3" placeholder="<?php echo $text[$language]['3minkey']; ?>"></textarea>
                 </div>
                 <div class="form-group">
-                  <input type="date" class="form-control" name="datelastest" placeholder="<?php echo $text[$language]['start_at_the_latest']; ?>">
+                  <input type="date" class="form-control" name="datelastest" required placeholder="<?php echo $text[$language]['start_at_the_latest']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="durationmonths" placeholder="<?php echo $text[$language]['duration']; ?>">
+                  <input type="number" class="form-control" name="durationmonths" required placeholder="<?php echo $text[$language]['duration']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="durationdaysweek" placeholder="<?php echo $text[$language]['frequency']; ?>">
+                  <input type="number" class="form-control" name="durationdaysweek" required placeholder="<?php echo $text[$language]['frequency']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="location" placeholder="<?php echo $text[$language]['location']; ?>">
+                  <input type="text" class="form-control" name="location" required placeholder="<?php echo $text[$language]['location']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="rate" placeholder="<?php echo $text[$language]['rate']; ?>">
+                  <input type="number" class="form-control" name="rate"  required placeholder="<?php echo $text[$language]['rate']; ?>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="consultantname" placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
+                  <input type="text" class="form-control" name="consultantname" required placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
                 </div>
                 <div class="form-group">
-                    <select class="form-control">
-                        <option>Open</option>
-                        <option>Win</option>
-                        <option>Lost</option>
+                    <select name="statut" required class="form-control">
+                        <option value="Open">Open</option>
+                        <option value="Win">Win</option>
+                        <option value="Lost">Lost</option>
                     </select>
                 </div>
                 <div class="form-group">
                   <label for="InputFile">File input :</label>
                   </br>
-                  <input type="file" id="InputFile">
+                  <input type="file" name="InputFile">
                 </div>
                 <div class="btnfix">
                     <div class="btncancel">
