@@ -1,5 +1,5 @@
         <div class="container contentajoutbesoin">
-            <form>
+            <form  action="./" method="POST">
                 <div class="form-group">
                   <input type="text" class="form-control" id="client" placeholder="<?php echo $text[$language]['client']; ?>">
                 </div>

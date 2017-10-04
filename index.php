@@ -57,6 +57,13 @@ if($idUserConnected) {
             require 'Views/Template/v_foot.php';
             require 'Views/Template/v_bottom.php';
             break;
+        
+        case 'c_404':
+            require 'Views/Template/v_top.php';
+            require 'Views/Template/v_head-new.php';
+            require 'Views/Template/v_foot.php';
+            require 'Views/Template/v_bottom.php';
+            break;
 
         case 'c_logout':
             session_destroy();

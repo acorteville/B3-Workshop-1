@@ -39,7 +39,7 @@ $text['english']['logout'] = "Log Out";
 $text['english']['problem'] = "Oops, Houston we've had a problem!";
 $text['english']['addrequirement'] = "Add a requirement";
 $text['english']['langversion'] = "English version";
-
+$text['english']['error'] = "Error";
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -61,5 +61,5 @@ $text['french']['logout'] = "Déconnexion";
 $text['french']['problem'] = "Oups, Houston nous avons un problème!";
 $text['french']['addrequirement'] = "Ajouter une expression de besoin";
 $text['french']['langversion'] = "Version Française";
-
+$text['french']['error'] = "Erreur";
 
