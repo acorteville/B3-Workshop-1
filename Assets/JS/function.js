@@ -1,5 +1,5 @@
     $( document ).ready(function() {
-        console.log( "document loaded" );
+      /*  console.log( "document loaded" );
         
         $("#connexion").off("click.ad").on( "click.ad", function() 
         {
@@ -24,6 +24,6 @@
                 console.log("def");
             }
          });
-        });
-        console.log('meuh');
+        }); 
+        console.log('meuh'); */
     });
