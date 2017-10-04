@@ -131,3 +131,29 @@ function loginUser($pemail) {
     }
     
 }
+if(isset($_POST['fonction']))
+{
+    if($_POST['fonction'] == "deleteRequirement")
+    {
+        deleteRequirement();
+    }
+}
+
+function deleteRequirement() {
+    global $pdo;
+    $id = $_POST['id'];
+    $sql = "DELETE FROM `requirements` WHERE `requirements`.`id` ='".$id."'";
+    //echo json_encode ($sql);
+    //var_dump($pdo);
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $result = $result->fetch();
+    if($result !== FALSE) {
+        echo "true";
+        return json_encode("true");
+    } else {
+        echo "false";
+        return json_encode("false");
+    }
+    
+}

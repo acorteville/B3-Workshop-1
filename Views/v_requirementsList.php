@@ -17,8 +17,8 @@
                         </div>
                         <div class="listeboutton">
                         <p class="daterequirement"><?php echo formatDate($aRequirement->creationdate); ?></p>
-                            <i class="fa fa-pencil iconpencil fa-2x" aria-hidden="true"></i>
-                            <i class="fa fa-trash icontrash fa-2x" aria-hidden="true"></i>
+                            <i id_edit="<?php echo $aRequirement->id; ?>" class="fa fa-pencil iconpencil fa-2x" aria-hidden="true"></i>
+                            <i id_suppr="<?php echo $aRequirement->id; ?>" class="fa fa-trash icontrash fa-2x" aria-hidden="true"></i>
                         </div>
                     </li>     
 

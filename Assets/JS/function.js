@@ -1,43 +1,36 @@
     $( document ).ready(function() {
-        console.log( "document loaded" );
+        //console.log( "document loaded" );
         
         $("i.icontrash").off("click.ad").on( "click.ad", function() 
         {
-         // var email = $("#email").val();
-          console.log("ok" );
+           
+          var id = $(this).attr("id_suppr");
+           var that = $(this).parents("li.list-group-item");
+          //console.log("ok "+id);
           var url1 = "Models/m_Models.php";
           $.ajax({
             url: url1,
             type:'POST',
             data: {
-             fonction:'removeRequirement',
-             params: {id : id}
+             fonction:'deleteRequirement',
+             id : id
        },
              success: function(data)
              {
-              /*  if (data !=  false) {
-                  $("#form")[0].reset();
-                  $("#sucess").removeClass("hide");
-                  setTimeout(
-                    function() 
-                    {
-                      $("#sucess").addClass("hide");
-                    }, 5000);
-                  //$("#sucess").addClass("hide");
-                }
-                else
-                {
-                    $("#problem").removeClass("hide");
-                    setTimeout(
-                    function() 
-                    {
-                      $("#problem").addClass("hide");
-                    }, 5000);
-                } */
+                 console.log(data);
+                 
+                 console.log(that);
+                 that.remove();
               }
            });       
         }); 
-        //console.log('meuh'); 
+        
+         $("i.iconpencil").off("click.ad").on( "click.ad", function() 
+        {
+            var id = $(this).attr("id_edit");
+            console.log(id);
+            
+        }); 
     });
     /*
 $(window).load(function(){
