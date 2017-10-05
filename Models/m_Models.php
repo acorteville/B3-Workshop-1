@@ -88,7 +88,8 @@ function getContactsSpe($pid) {
 
 function getContacts($pid) {
     global $pdo;
-    $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid)."ORDER BY name, lastname";
+    $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid)." ORDER BY name, lastname";
+    echo $sql;
     $result = $pdo->prepare($sql);
     $result->execute();
     $contacts = array();
