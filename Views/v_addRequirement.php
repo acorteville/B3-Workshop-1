@@ -70,7 +70,7 @@
             <input type="number" class="form-control" name="rate"  required placeholder="<?php echo $text[$language]['rate']; ?>" value="<?php echo @$requirement->rate; ?>">
         </div>
         <div class="form-group">
-            <input type="email"  autocapitalize="none"  class="form-control" name="consultantname" required placeholder="<?php echo $text[$language]['consultantsemails']; ?>">
+            <input type="email"  autocapitalize="none"  class="form-control" name="consultantname" required placeholder="<?php echo $text[$language]['consultantsemails']; ?>" value="<?php echo @$contact->email; ?>"> 
         </div>
         <div class="form-group">
             <select name="statut" required class="form-control">

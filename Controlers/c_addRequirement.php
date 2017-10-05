@@ -21,7 +21,7 @@ if( !empty($_POST))
    $rate = trim(addslashes ($_POST['rate']));
    $consultantname = trim(addslashes ($_POST['consultantname']));
    $statut = trim(addslashes ($_POST['statut']));
-   $InputFile = isset($_POST['InputFile']) ? filtre($_POST['InputFile']) : NULL;
+   $InputFile = isset($_POST['InputFile']) ? trim(addslashes($_POST['InputFile'])) : NULL;
    
    /**
     * array (size=15)

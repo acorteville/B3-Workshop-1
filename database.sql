@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le :  jeu. 05 oct. 2017 à 15:44
--- Version du serveur :  5.6.35
--- Version de PHP :  7.1.1
+-- Client :  127.0.0.1
+-- Généré le :  Jeu 05 Octobre 2017 à 14:42
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `projet-gfi`
@@ -26,7 +32,7 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `clients`
+-- Contenu de la table `clients`
 --
 
 INSERT INTO `clients` (`id`, `corporatename`) VALUES
@@ -62,7 +68,7 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `contacts`
+-- Contenu de la table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `name`, `lastname`, `email`, `id_client`) VALUES
@@ -83,14 +89,6 @@ CREATE TABLE `files` (
   `name` varchar(64) NOT NULL,
   `id_requirement` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `files`
---
-
-INSERT INTO `files` (`id`, `name`, `id_requirement`) VALUES
-(3, 'image.jpg', 1),
-(4, 'calendrier.cls', 1);
 
 -- --------------------------------------------------------
 
@@ -116,18 +114,16 @@ CREATE TABLE `keys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `keys`
+-- Contenu de la table `keys`
 --
 
 INSERT INTO `keys` (`id_requirement`, `id`, `successfactors`) VALUES
-(1, 1, 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.'),
-(1, 2, 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'),
-(6, 3, 'test 2'),
-(4, 4, 'je test bananananana'),
-(5, 5, 'je test poirreeeeee'),
-(0, 6, 'Jdkdjdkkdkf'),
-(0, 7, 'Jdkdjdkkdkf'),
-(37, 8, 'Jskdj');
+(1, 9, 'azertyu'),
+(7, 10, 'efficacité'),
+(8, 11, 'efficacité'),
+(9, 12, 'efficacité'),
+(10, 13, 'Bon prix'),
+(13, 14, 'efficacité');
 
 -- --------------------------------------------------------
 
@@ -153,42 +149,16 @@ CREATE TABLE `requirements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `requirements`
+-- Contenu de la table `requirements`
 --
 
 INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`, `id_contact`) VALUES
-(1, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
-(4, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
-(5, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(6, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
-(7, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
-(8, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
-(9, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
-(10, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
-(11, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(12, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
-(13, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
-(14, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
-(15, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
-(16, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
-(17, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(18, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
-(19, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
-(20, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
-(21, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
-(22, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
-(23, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(24, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
-(25, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
-(26, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
-(27, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(28, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(29, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(30, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(31, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(32, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(33, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
-(34, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0);
+(1, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 2),
+(7, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 5),
+(8, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 3),
+(9, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 2),
+(10, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 4),
+(13, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -205,7 +175,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `users`
+-- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`) VALUES
@@ -216,7 +186,7 @@ INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`) VALUES
 (5, 'GHERISSI', 'Vianney', 'vianney.gherissi@gfi.com', '');
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -244,7 +214,8 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_requirement` (`id_requirement`);
+  ADD KEY `id_requirement` (`id_requirement`),
+  ADD KEY `id_requirement_2` (`id_requirement`);
 
 --
 -- Index pour la table `isconsulof`
@@ -257,7 +228,8 @@ ALTER TABLE `isconsulof`
 -- Index pour la table `keys`
 --
 ALTER TABLE `keys`
-  ADD PRIMARY KEY (`id`) USING BTREE;
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD KEY `id_requirement` (`id_requirement`);
 
 --
 -- Index pour la table `requirements`
@@ -275,7 +247,7 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -302,7 +274,7 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT pour la table `keys`
 --
 ALTER TABLE `keys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `requirements`
 --
@@ -314,7 +286,7 @@ ALTER TABLE `requirements`
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- Contraintes pour les tables déchargées
+-- Contraintes pour les tables exportées
 --
 
 --
@@ -327,7 +299,7 @@ ALTER TABLE `contacts`
 -- Contraintes pour la table `files`
 --
 ALTER TABLE `files`
-  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`id_requirement`) REFERENCES `requirements` (`id`);
+  ADD CONSTRAINT `files_ibfk_1` FOREIGN KEY (`id_requirement`) REFERENCES `requirements` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `isconsulof`
@@ -337,8 +309,18 @@ ALTER TABLE `isconsulof`
   ADD CONSTRAINT `isconsulof_ibfk_2` FOREIGN KEY (`id_requirement`) REFERENCES `requirements` (`id`);
 
 --
+-- Contraintes pour la table `keys`
+--
+ALTER TABLE `keys`
+  ADD CONSTRAINT `fk_req` FOREIGN KEY (`id_requirement`) REFERENCES `requirements` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `requirements`
 --
 ALTER TABLE `requirements`
   ADD CONSTRAINT `requirements_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id`),
   ADD CONSTRAINT `requirements_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
