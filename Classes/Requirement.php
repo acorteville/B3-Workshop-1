@@ -20,6 +20,7 @@ class Requirement {
     public $status;
     public $id_client;
     public $id_user;
+    public $name_client;
     
     function __construct($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanualcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user)
     {
@@ -36,6 +37,7 @@ class Requirement {
         $this->status = $pstatus;
         $this->id_client = $pid_client;
         $this->id_user = $pid_user;
+        $this->name_client = $this->getClient()->corporatename;
     }
     
     public function getFiles() {

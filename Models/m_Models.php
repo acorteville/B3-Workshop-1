@@ -5,14 +5,36 @@
  * and open the template in the editor.
  */
 
+function filter($string) {
+    return trim(addslashes($string));
+}
+
 function formatDate($date) {
     return date('d/m/Y', strtotime($date));
 }
 
-function getRequirements($ppage, $pnbperpage) {
+function getRequirements($ppage, $pnbperpage = NULL, $psort, $porder = "DESC") {
     $minRange = ($ppage - 1) * $pnbperpage;
     global $pdo;
-    $sql = "SELECT * FROM `requirements` ORDER BY id DESC LIMIT ".$minRange.", ".$pnbperpage;
+    
+    $sortsauthorized = array('id', 'title', 'description', 'creationdate', 'startlastdate',
+                            'duration', 'frequency', 'manualcoord', 'geocoord', 'rate',
+                            'status', 'id_client', 'id_user');
+    
+    $ordersauthorized = array('ASC', 'DESC');
+    if(in_array($porder , $ordersauthorized)) {
+        $orderauthorized = $porder;
+    }
+    
+    $sql = "SELECT * FROM `requirements`";
+    if(in_array($psort , $sortsauthorized)) {
+        $sql .= " ORDER BY ".$psort." ".$orderauthorized;
+    } else {
+        $sql .= " ORDER BY id ".$orderauthorized;
+    }
+    if($pnbperpage != NULL) {
+        $sql .= " LIMIT ".$minRange.", ".$pnbperpage;
+    }
     $result = $pdo->prepare($sql);
     $result->execute();
     $requirements = array();
@@ -47,6 +69,20 @@ function getClients() {
     return $clients;
 }
 
+function getContacts($pid) {
+    global $pdo;
+    $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid);
+    echo $sql;
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $contacts = array();
+    foreach($result as $aLine) {
+        $contacts[] = new Contact($aLine['id'], $aLine['name'], $aLine['lastname'], $aLine['email']);
+    }
+    return $contacts;
+}
+
+
 function getFilesOfRequirement($pidRequirement) {
     global $pdo;
     $sql = "SELECT * FROM `files` WHERE `id_requirement` = ".$pidRequirement;
@@ -75,6 +111,32 @@ function getKeysOfRequirement($pidRequirement) {
         );
     }
     return $keys;
+}
+
+function getRequirementDetails($pidRequirement) {
+    global $pdo;
+    $sql = "SELECT * FROM `requirements` WHERE `id`  = ".$pidRequirement;
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $result = $result->fetch();
+    
+    
+    $result = new Requirement($result['id'],
+        $result['title'], 
+        $result['description'], 
+        $result['creationdate'], 
+        $result['startlastdate'], 
+        $result['duration'], 
+        $result['frequency'], 
+        $result['manualcoord'], 
+        $result['geocoord'], 
+        $result['rate'], 
+        $result['status'], 
+        $result['id_client'], 
+        $result['id_user']
+    );
+    
+    return $result;
 }
 
 function getClientDetails($pidClient) {

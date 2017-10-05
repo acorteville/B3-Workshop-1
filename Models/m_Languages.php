@@ -1,8 +1,4 @@
 <?php
-
-// setcookie("lang","en",time()+86400);
-//unset($_COOKIE["lang"]);
-
 $codelanguage = explode('-',$_SERVER['HTTP_ACCEPT_LANGUAGE'])[0];
 
 if(isset($_COOKIE['lang'])) {
@@ -44,6 +40,10 @@ $text['english']['newrequirement'] = "New requirement";
 $text['english']['consultantsemails'] = "Consultants' emails";
 $text['english']['name'] = "name";
 $text['english']['lastname'] = "lastname";
+$text['english']['next'] = "Next";
+$text['english']['previous'] = "Previous";
+$text['english']['home'] = "Home";
+$text['english']['editrequirement'] = "Requirement Edition";
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -70,4 +70,8 @@ $text['french']['newrequirement'] = "Nouveau besoin";
 $text['french']['consultantsemails'] = "Emails des consultants";
 $text['french']['name'] = "nom";
 $text['french']['lastname'] = "prénom";
+$text['french']['next'] = "Suivant";
+$text['french']['previous'] = "Précédent";
+$text['french']['home'] = "Accueil";
+$text['french']['editrequirement'] = "Édition de Besoin";
 
