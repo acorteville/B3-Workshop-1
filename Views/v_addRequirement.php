@@ -1,7 +1,7 @@
         <div class="container contentajoutbesoin">
             <form action="new-requirement.html" method="POST">
                 <div class="form-group">
-                    <select name="client" required class="form-control">
+                    <select name="client" id="client" required class="form-control">
                         <?php 
                         foreach ($clients as $client) {
                             echo "<option  value='".$client->id."' class='clientV'>";

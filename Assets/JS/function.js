@@ -1,10 +1,12 @@
 $(document).ready(function () {
     console.log("document loaded");
 
-    $("option.clientV").off("click.ad").on("click.ad", function ()
+    $("#client").change( function ()
     {
-        console.log("huyctfjvgyuh");
-        var id = $(this).attr("value");
+        var opt = $('option:selected', this);
+        console.log(opt);
+        //console.log("huyctfjvgyuh");
+        var id = this.value;
         //console.log(this)
         console.log(id);
         var url1 = "WebServices/?m=getcontacts&id=" + id;
@@ -33,7 +35,8 @@ $(document).ready(function () {
     $("i.icontrash").off("click.ad").on("click.ad", function ()
     {
         var id = $(this).attr("id_suppr");
-        var that = $(this).parents("li.list-group-item");
+        var that = $(this).parents("div.list-group-item");
+        //console.log(that);
         bootbox.confirm({
             message: "Voulez-vous vraiment supprimer ce besoin?",
             buttons: {
@@ -56,11 +59,8 @@ $(document).ready(function () {
                         type: 'POST',
                         success: function (data)
                         {
-                            //console.log(data);
-
-                            //console.log(that);
-                            if (data == "true")
-                            {
+                            if (data == "true" || data == true)
+                            {   
                                 that.remove();
                             }
 
