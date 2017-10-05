@@ -4,14 +4,16 @@
                     <select name="client" required class="form-control">
                         <?php 
                         foreach ($clients as $client) {
-                            echo "<option value='".$client->id."'>";
+                            echo "<option  value='".$client->id."' class='clientV'>";
                             echo $client->corporatename;
                             echo "</option>";
                         } ?>
                     </select>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="contactname" required placeholder="<?php echo $text[$language]['contact_name']; ?>">
+                    <select name="contactname" id="contactname"  required class="form-control">
+                        
+                    </select>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control" name="title" required placeholder="<?php echo $text[$language]['title']; ?>" value="<?php echo @$requirement->title; ?>">
