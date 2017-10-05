@@ -29,7 +29,6 @@
             <select name="contactname" id="contactname"  required class="form-control">
                 <?php
                 if (isset($isEditReq)) {
-
                     foreach ($contacts as $contact) {
                         if ($requirement->id_contact === $contact->id) {
                             echo "<option  value='" . $contact->id . "' selected='selected' class='clientV'>";

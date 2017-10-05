@@ -6,14 +6,14 @@ if( !empty($_POST))
    $title = trim(addslashes ($_POST['title']));
    $description = trim(addslashes ($_POST['description']));
    if(isset($_POST['3mainkey1']))
-    $threeMainkey1 = trim(addslashes ($_POST['3mainkey1']));
+        $threeMainkey1 = trim(addslashes ($_POST['3mainkey1']));
    $datelastest = trim(addslashes ($_POST['datelastest']));
    $date = date('Y-m-d', strtotime(str_replace('-', '/', $datelastest)));
    $durationmonths = trim(addslashes ($_POST['durationmonths']));
    $durationdaysweek = trim(addslashes ($_POST['durationdaysweek']));
    $location = trim(addslashes ($_POST['location']));
    $rate = trim(addslashes ($_POST['rate']));
-   $consultantname = trim(addslashes ($_POST['consultantname']));
+   $consultantname = getConsultantByEmail(trim(addslashes ($_POST['consultantname'])));
    $statut = trim(addslashes ($_POST['statut']));
    $InputFile = isset($_POST['InputFile']) ? trim(addslashes($_POST['InputFile'])) : NULL;
    
@@ -21,8 +21,7 @@ if( !empty($_POST))
 
    try
    {
-       $aRequirement = new Requirement(NULL, $title, $description, NULL, $date, $durationmonths, $durationdaysweek, $location, "", $rate, $statut, $client, $_SESSION['idSession'], $contactname);
-
+       $aRequirement = new Requirement(NULL, $title, $description, NULL, $date, $durationmonths, $durationdaysweek, $location, "", $rate, $statut, $client, $_SESSION['idSession'], $contactname);       
        $id = $aRequirement->save();
        
        try {

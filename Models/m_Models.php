@@ -154,7 +154,7 @@ function getClientDetails($pidClient) {
 
 function saveRequirement($ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user, $pid_contact) {
     global $pdo;
-    $sql = "INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`, `id_contact`) VALUES (NULL, '".$ptitle."', '".$pdescription."', now(), '".$pstartlastdate."', '".$pduration."', '".$pfrequency."', '".$pmanuelcoord."', '".$pgeocoord."', '".$prate."', '".$pstatus."', '".$pid_user."', '".$pid_client."', '".$pid_contact."');";
+    $sql = "INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`, `id_contact`) VALUES (NULL, '".$ptitle."', '".$pdescription."', now(), '".$pstartlastdate."', '".$pduration."', '".$pfrequency."', '".$pmanuelcoord."', '".$pgeocoord."', '".$prate."', '".$pstatus."', '".$pid_contact."', '".$pid_client."', '".$pid_user."');";
     $result = $pdo->prepare($sql);
     $result->execute();
     return $pdo->lastInsertId();
@@ -205,8 +205,6 @@ if(isset($_POST['fonction']))
 function deleteRequirement($pid) {
     global $pdo;
     $sql = "DELETE FROM `requirements` WHERE `requirements`.`id` ='".filter($pid)."'";
-    
-    //var_dump($pdo);
     $result = $pdo->prepare($sql);
     $result->execute();
     if($result !== FALSE) {
@@ -225,8 +223,6 @@ function getRequirementDetails($pidRequirement) {
     $result = $pdo->prepare($sql);
     $result->execute();
     $result = $result->fetch();
-    
-    
     $result = new Requirement($result['id'],
         $result['title'], 
         $result['description'], 
@@ -245,4 +241,19 @@ function getRequirementDetails($pidRequirement) {
     );
     
     return $result;
+}
+
+function getConsultantByEmail($string) {
+    global $pdo;
+    $sql = "SELECT * FROM `consultants` WHERE `email` = '".$string."'";
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $result = $result->fetch();
+    if($result !== FALSE) {
+        return new Consultant($result['id'], $result['email']);
+    } else {
+        return FALSE;
+    }
+    
+
 }

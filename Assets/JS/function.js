@@ -1,14 +1,11 @@
 $(document).ready(function () {
-    console.log("document loaded");
 
     $("#client").change( function ()
     {
         var opt = $('option:selected', this);
-        console.log(opt);
         //console.log("huyctfjvgyuh");
         var id = this.value;
         //console.log(this)
-        console.log(id);
         var url1 = "WebServices/?m=getcontacts&id=" + id;
         $.ajax({
             url: url1,
@@ -22,8 +19,9 @@ $(document).ready(function () {
                     console.log(obj)
                     for (i = 0; i < obj.length; i++)
                     {
-                        str = str + '<option value="' + obj[0].id + '">' + obj[0].name + ' ' + obj[0].lastname + '</option>';
+                        str = str + '<option value="' + obj[i].id + '">' + obj[i].name + ' ' + obj[i].lastname + '</option>';
                     }
+                    console.log(str);
                     $("#contactname").html(str);
                 }
 

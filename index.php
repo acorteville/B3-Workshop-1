@@ -3,13 +3,15 @@ session_start();
 define('BASESITE', "http://".$_SERVER['HTTP_HOST']."/epsi/B3-Workshop-1/");
 
 // Inclusion des différentes classes du projet
+include_once 'Classes/Key.php';
+include_once 'Classes/User.php';
+include_once 'Classes/File.php';
+include_once 'Classes/Pdom.php';
 include_once 'Classes/Client.php';
 include_once 'Classes/Contact.php';
-include_once 'Classes/File.php';
-include_once 'Classes/Key.php';
-include_once 'Classes/Pdom.php';
+include_once 'Classes/Consultant.php';
 include_once 'Classes/Requirement.php';
-include_once 'Classes/User.php';
+
 
 // Inclusion des modèles
 include_once 'Models/m_Models.php';
