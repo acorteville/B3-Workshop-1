@@ -56,8 +56,6 @@
                                 <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-ASC.html">Date : Croissant</option>
                                 <option value="<?php echo BASESITE; ?>requirement-list-1-title-ASC.html">Titre : Croissant</option>
                                 <option value="<?php echo BASESITE; ?>requirement-list-1-title-DESC.html">Titre : Décroissant</option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-id_client-ASC.html">Client : Croissant</option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-id_client-DESC.html">Client : Décroissant</option>
                             </select>
                         </form>
                     </div>
