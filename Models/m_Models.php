@@ -69,6 +69,18 @@ function getClients() {
     return $clients;
 }
 
+function getContactsSpe($pid) {
+    global $pdo;
+    $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid);
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $contacts = $result->fetchAll();
+ /*   foreach($result as $aLine) {
+        $contacts[] = new Contact($aLine['id'], $aLine['name'], $aLine['lastname'], $aLine['email']);
+    } */
+    return $contacts;
+}
+
 function getContacts($pid) {
     global $pdo;
     $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid);

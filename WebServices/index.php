@@ -24,7 +24,7 @@ switch ($method) {
         break;
     
     case 'getcontacts':
-        $contacts = getContacts($id);
+        $contacts = getContactsSpe($id);
         echo json_encode($contacts);
         break;
 

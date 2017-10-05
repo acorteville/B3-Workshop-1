@@ -3,7 +3,7 @@ if( !empty($_POST))
 {
    //var_dump($_POST); 
    $client = trim(addslashes ($_POST['client']));
-   $contactname = trim(addslashes ($_POST['contactname']));
+   $contactname = trim(addslashes ($_POST['contactname'])); //@toDo 
    $title = trim(addslashes ($_POST['title']));
    $description = trim(addslashes ($_POST['description']));
    if(isset($_POST['3mainkey1']))
