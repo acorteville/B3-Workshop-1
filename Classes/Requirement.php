@@ -50,10 +50,13 @@ class Requirement {
         return getKeysOfRequirement($this->id);
     }
     
+    public function getConsultants() {
+        return getConsultantsOfRequirement($this->id_client);
+    }
+
     public function getClient() {
         return getClientDetails($this->id_client);
     }
-
     
     public function save() {
         return saveRequirement($this->title, 

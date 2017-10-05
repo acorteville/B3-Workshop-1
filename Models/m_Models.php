@@ -130,31 +130,17 @@ function getKeysOfRequirement($pidRequirement) {
     return $keys;
 }
 
-function getRequirementDetails($pidRequirement) {
+function getConsultantsOfRequirement($pidRequirement) {
     global $pdo;
-    $sql = "SELECT * FROM `requirements` WHERE `id`  = ".$pidRequirement;
+    $sql = "SELECT * FROM `requirements` INNER JOIN `consultants` ON `requirements`.`id` = `consultants`.`id` WHERE `id`  = ".$pidRequirement;
     $result = $pdo->prepare($sql);
     $result->execute();
-    $result = $result->fetch();
-    
-    
-    $result = new Requirement($result['id'],
-        $result['title'], 
-        $result['description'], 
-        $result['creationdate'], 
-        $result['startlastdate'], 
-        $result['duration'], 
-        $result['frequency'], 
-        $result['manualcoord'], 
-        $result['geocoord'], 
-        $result['rate'], 
-        $result['status'], 
-        $result['id_client'], 
-        $result['id_user'],
-        $result['id_contact']
-    );
-    
-    return $result;
+    $result = $result->fetchAll();
+    $consultants = array();
+    foreach($result as $aLine) {
+        $consultants[] = new Consultant($result['id'], $result['name']); 
+    }
+    return $consultants;
 }
 
 function getClientDetails($pidClient) {

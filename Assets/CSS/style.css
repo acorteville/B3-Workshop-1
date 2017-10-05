@@ -122,26 +122,33 @@ html, body{
     border-color: #fff !important;
     border-radius: 10px;
     font-size: 13px;
-    
-    
     margin: 12px 0 12px;
 }
 
 .list-group {
 }
 .statut{
+    text-align: center;
     display: inline-block;
-    width: 40px;;
+    width: 50px;
+}
+
+.statuttext {
+    width: 100%;
+    text-align: center;
+
 }
 .statuticon{
     color: #fd8224;
+    margin: 0 auto;
+    text-align: center;
 }
 .titleclient{
     display: inline-block;
 }
 
 .col-md-6 .titleclient {
-    max-width: 50%;
+    max-width: 52%;
 }
 
 .tittleRequirement{

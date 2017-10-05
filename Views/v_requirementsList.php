@@ -26,7 +26,7 @@
                                 default:
                                 break;
                             } ?>
-                            <p class="statuttext"><?php echo $aRequirement->status; ?></p>
+                            <p class="statuttext"><?php echo $text[$language][$aRequirement->status]; ?></p>
                             <div class="fix"></div>
                         </div>
                         <div class="titleclient">
