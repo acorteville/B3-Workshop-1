@@ -3,26 +3,44 @@
         
         $("i.icontrash").off("click.ad").on( "click.ad", function() 
         {
+            var id = $(this).attr("id_suppr");
+            var that = $(this).parents("li.list-group-item");
+                bootbox.confirm({
+                    message: "Voulez-vous vraiment supprimer ce besoin?",
+                    buttons: {
+                        confirm: {
+                            label: 'Oui',
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: 'Non',
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if(result)
+                        {
+                           //console.log("ok "+id);
+                            var url1 = "Models/m_Models.php";
+                            $.ajax({
+                              url: url1,
+                              type:'POST',
+                              data: {
+                               fonction:'deleteRequirement',
+                               id : id
+                         },
+                               success: function(data)
+                               {
+                                   console.log(data);
+
+                                   console.log(that);
+                                   that.remove();
+                                }
+                             });       
+                        }
+                    }
+                });
            
-          var id = $(this).attr("id_suppr");
-           var that = $(this).parents("li.list-group-item");
-          //console.log("ok "+id);
-          var url1 = "Models/m_Models.php";
-          $.ajax({
-            url: url1,
-            type:'POST',
-            data: {
-             fonction:'deleteRequirement',
-             id : id
-       },
-             success: function(data)
-             {
-                 console.log(data);
-                 
-                 console.log(that);
-                 that.remove();
-              }
-           });       
         }); 
         
          $("i.iconpencil").off("click.ad").on( "click.ad", function() 
