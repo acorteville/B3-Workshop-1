@@ -31,7 +31,10 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`id`, `corporatename`) VALUES
 (1, 'SNCF'),
-(2, 'CROQUE GEL');
+(2, 'CROQUE GEL'),
+(3, 'ATOS'),
+(4, 'AIRBUS'),
+(5, 'TRANSPOLE'),
 
 -- --------------------------------------------------------
 
@@ -63,7 +66,11 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `lastname`, `email`, `id_client`) VALUES
-(1, 'Michael', 'Delvoye', 'michael.delvoye@croquegel.com', 2);
+(1, 'BANANA', 'Sonya', 'banana.sonya@sncf.com', 1),
+(2, 'Michael', 'Delvoye', 'michael.delvoye@croquegel.com', 2),
+(3, 'TELLIER', 'Emmaanuel', 'tellier.emmanuel@atos.com', 3),
+(4, 'POIRE', 'Chocola', 'poire.chocola@airbus.com', 4),
+(5, 'TEST', 'Landers', 'test.landers@transpole.com', 5);
 
 -- --------------------------------------------------------
 
@@ -115,7 +122,10 @@ CREATE TABLE `keys` (
 INSERT INTO `keys` (`id_requirement`, `id`, `successfactors`) VALUES
 (1, 1, 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis risus eget urna mollis ornare vel eu leo.'),
 (1, 2, 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'),
-(6, 3, 'test 2');
+(6, 3, 'test 2'),
+(4, 4, 'je test bananananana'),
+(5, 5, 'je test poirreeeeee');
+
 
 -- --------------------------------------------------------
 
@@ -169,8 +179,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`) VALUES
-(1, 'Lucas', 'Bauduin', 'bauduin.lucas@gmail.com', '098f6bcd4621d373cade4e832627b4f6');
-
+(1, 'BAUDUIN', 'Lucas', 'bauduin.lucas@gfi.com'),
+(2, 'BARTHOLOME', 'Pierre-Henry', 'bartholome.pierre-henry@gfi.com'),
+(3, 'RIVET', 'Arnaud', 'rivet.arnaud@gfi.com'),
+(4, 'DUBUS', 'Alexis', 'dubus.alexis@gfi.com'),
+(5, 'GHERISSI', 'Vianney', 'gherissi.vianney@gfi.com');
 --
 -- Index pour les tables déchargées
 --
