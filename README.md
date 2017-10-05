@@ -16,6 +16,10 @@ l'application depuis le repertoire racine d'Apache2.
 
 Il est nécessaire d'avoir un serveur WAMP/LAMP/XAMP et de créer une base de donnée "projet-gfi" en utilisant le fichier database.sql. Sur phpMyadmin, il est nécessaire d'avoir un utilisateur "root" avec le mot de passe "root". 
 
+# Exemple :
+
+http://www.lucasbaudu.in/epsi/B3-Workshop-1/ 
+
 # Exemple de code PHP :
 
 Création d'un besoin
