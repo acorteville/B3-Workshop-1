@@ -1,6 +1,6 @@
         <div class="container">
-            <div class="input-group searchbar" style="padding: 22px 0 10px;">
-                <input type="text" id="searchbar" class="form-control" placeholder="" aria-describedby="basic-addon2">
+            <div class="input-group searchbar" style="display: none;">
+                <input style="display: hidden;" type="hidden" id="searchbar" class="form-control" placeholder="" aria-describedby="basic-addon2">
                 <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
             </div>
                 <div class="list-group">
@@ -54,7 +54,7 @@
                         <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page + 1 ."-".$sort."-".$order; ?>.html" class="button"><?php echo $text[$language]['next']; ?></a><div class="fix"></div></div>                        
                     <?php } ?>
                         <div class="fix"></div>
-                        <div class="listetri" style="margin: 20px auto; width: 320px;">
+                        <div class="listetri" style="margin: 20px auto 0; width: 320px;">
                         <form action="" method="post" name="sortby" id="sortby">
                             <select name="sortby" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                                 <?php var_dump($text); ?>
