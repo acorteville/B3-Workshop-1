@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  jeu. 05 oct. 2017 à 12:21
+-- Généré le :  jeu. 05 oct. 2017 à 15:44
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.1
 
@@ -124,7 +124,10 @@ INSERT INTO `keys` (`id_requirement`, `id`, `successfactors`) VALUES
 (1, 2, 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.'),
 (6, 3, 'test 2'),
 (4, 4, 'je test bananananana'),
-(5, 5, 'je test poirreeeeee');
+(5, 5, 'je test poirreeeeee'),
+(0, 6, 'Jdkdjdkkdkf'),
+(0, 7, 'Jdkdjdkkdkf'),
+(37, 8, 'Jskdj');
 
 -- --------------------------------------------------------
 
@@ -145,26 +148,47 @@ CREATE TABLE `requirements` (
   `rate` float NOT NULL,
   `status` set('Open','Win','Lost') NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_client` int(11) NOT NULL
+  `id_client` int(11) NOT NULL,
+  `id_contact` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `requirements`
 --
 
-INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`) VALUES
-(1, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2),
-(4, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1),
-(5, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1),
-(6, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4),
-(7, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5),
-(8, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3),
-(9, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2),
-(10, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1),
-(11, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1),
-(12, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4),
-(13, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5),
-(14, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3);
+INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`, `id_contact`) VALUES
+(1, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
+(4, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
+(5, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(6, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
+(7, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
+(8, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
+(9, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
+(10, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
+(11, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(12, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
+(13, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
+(14, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
+(15, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
+(16, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
+(17, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(18, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
+(19, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
+(20, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
+(21, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2, 0),
+(22, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1, 0),
+(23, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(24, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4, 0),
+(25, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5, 0),
+(26, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3, 0),
+(27, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(28, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(29, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(30, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(31, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(32, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(33, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0),
+(34, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -278,12 +302,12 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT pour la table `keys`
 --
 ALTER TABLE `keys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT pour la table `requirements`
 --
 ALTER TABLE `requirements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT pour la table `users`
 --

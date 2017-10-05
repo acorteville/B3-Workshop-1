@@ -15,11 +15,13 @@ $method = isset($_GET['m']) ? $_GET['m'] : 'getrequirement';
 $sortingby = isset($_GET['s']) ? $_GET['s'] : 'id';
 $order = isset($_GET['o']) ? $_GET['o'] : 'ASC';
 $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
+$search = isset($_GET['s']) ? $_GET['s'] : null;
+        
 
 
 switch ($method) {
     case 'getrequirement':
-        $requirements = getRequirements(1, NULL, $sortingby, $order);
+        $requirements = getRequirements(1, NULL, $sortingby, $order, $search);
         echo json_encode($requirements);
         break;
     

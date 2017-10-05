@@ -13,7 +13,8 @@ function formatDate($date) {
     return date('d/m/Y', strtotime($date));
 }
 
-function getRequirements($ppage, $pnbperpage = NULL, $psort, $porder = "DESC") {
+
+function getRequirements($ppage, $pnbperpage = NULL, $psort, $porder = "DESC", $psearch = NULL) {
     $minRange = ($ppage - 1) * $pnbperpage;
     global $pdo;
     
@@ -27,10 +28,13 @@ function getRequirements($ppage, $pnbperpage = NULL, $psort, $porder = "DESC") {
     }
     
     $sql = "SELECT * FROM `requirements`";
+    if($psearch != NULL) {
+        $sql .= " INNER JOIN `clients` ON clients.id = id_client WHERE `clients`.`corporatename` LIKE '".$psearch."%'";
+    }
     if(in_array($psort , $sortsauthorized)) {
         $sql .= " ORDER BY status, ".$psort." ".$orderauthorized;
     } else {
-        $sql .= " ORDER BY id ".$orderauthorized;
+        $sql .= " ORDER BY requirements.id ".$orderauthorized;
     }
     if($pnbperpage != NULL) {
         $sql .= " LIMIT ".$minRange.", ".$pnbperpage;
