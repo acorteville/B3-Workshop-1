@@ -221,3 +221,31 @@ function deleteRequirement($pid) {
     }
     
 }
+
+function getRequirementDetails($pidRequirement) {
+    global $pdo;
+    $sql = "SELECT * FROM `requirements` WHERE `id`  = ".$pidRequirement;
+    $result = $pdo->prepare($sql);
+    $result->execute();
+    $result = $result->fetch();
+    
+    
+    $result = new Requirement($result['id'],
+        $result['title'], 
+        $result['description'], 
+        $result['creationdate'], 
+        $result['startlastdate'], 
+        $result['duration'], 
+        $result['frequency'], 
+        $result['manualcoord'], 
+        $result['geocoord'], 
+        $result['rate'], 
+        $result['status'], 
+        $result['id_client'], 
+        $result['id_user'],
+        $result['id_contact']
+            
+    );
+    
+    return $result;
+}

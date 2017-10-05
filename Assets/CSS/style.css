@@ -163,7 +163,7 @@ html, body{
 }
 .daterequirement{
     display: block;
-    
+    margin: 0 0 6px;
 }
 .listeboutton{
     display: inline-block;
