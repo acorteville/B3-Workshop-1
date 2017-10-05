@@ -48,10 +48,10 @@ $text['english']['checklogin'] = "Login error : check your email adress";
 $text['english']['Win'] = "Win";
 $text['english']['Lost'] = "Lost";
 $text['english']['Open'] = "Open";
-$text['english']['dateincreasing.'] = "Date : increasing.";
-$text['english']['datedecreasing.'] = "Date : decreasing.";
-$text['english']['titreincreasing.'] = "Title : increasing.";
-$text['english']['titredecreasing.'] = "Title : decreasing";
+$text['english']['dateincreasing'] = "Date : increasing";
+$text['english']['datedecreasing'] = "Date : decreasing";
+$text['english']['titreincreasing'] = "Titre : increasing";
+$text['english']['titredecreasing'] = "Titre : decreasing";
 
 
 

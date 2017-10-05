@@ -2,6 +2,10 @@
 
 Membres du groupe : BAUDUIN Lucas, BARTHOLOME Pierre-Henry, DUBUS Alexis, GHERISSI Vianney et RIVET Arnaud.
 
+La connexion à la base de données s'effectue en modifiant le fichier /Classes/Pdom.php
+
+Connexion possible lors du login à l'aide des identifiants : lucas.bauduin
+
 # Attention :
 
 Le module Apache2 Rewrite est nécessaire au bon fonctionnement de l'application.
