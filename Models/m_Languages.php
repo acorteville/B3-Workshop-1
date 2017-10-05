@@ -73,5 +73,5 @@ $text['french']['lastname'] = "prénom";
 $text['french']['next'] = "Suivant";
 $text['french']['previous'] = "Précédent";
 $text['french']['home'] = "Accueil";
-$text['french']['editrequirement'] = "Édition de Besoin";
+$text['french']['editrequirement'] = "Édition d'un Besoin";
 
