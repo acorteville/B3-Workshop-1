@@ -28,7 +28,7 @@ function getRequirements($ppage, $pnbperpage = NULL, $psort, $porder = "DESC") {
     
     $sql = "SELECT * FROM `requirements`";
     if(in_array($psort , $sortsauthorized)) {
-        $sql .= " ORDER BY ".$psort." ".$orderauthorized;
+        $sql .= " ORDER BY status, ".$psort." ".$orderauthorized;
     } else {
         $sql .= " ORDER BY id ".$orderauthorized;
     }
