@@ -1,5 +1,32 @@
 $(document).ready(function () {
 
+    $("#searchbar").keyup(function(){
+        var url1 = "WebServices/?s=" + $(this).val();
+        $.ajax({
+            url: url1,
+            type: 'POST',
+            success: function (data)
+            {
+                if (data != null)
+                {
+                    var str = "";
+                    obj = JSON.parse(data);
+                    console.log(obj)
+                    for (i = 0; i < obj.length; i++)
+                    {
+                        str = str + '<option value="' + obj[i].id + '">' + obj[i].name + ' ' + obj[i].lastname + '</option>';
+                    }
+                    console.log(str);
+                    $("#contactname").html(str);
+                }
+
+            }
+        });
+
+        
+        
+    });
+
     $("#client").change( function ()
     {
         var opt = $('option:selected', this);
