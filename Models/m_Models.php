@@ -89,7 +89,6 @@ function getContactsSpe($pid) {
 function getContacts($pid) {
     global $pdo;
     $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid)." ORDER BY name, lastname";
-    echo $sql;
     $result = $pdo->prepare($sql);
     $result->execute();
     $contacts = array();
@@ -156,7 +155,6 @@ function getClientDetails($pidClient) {
 function saveRequirement($ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user, $pid_contact) {
     global $pdo;
     $sql = "INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`, `id_contact`) VALUES (NULL, '".$ptitle."', '".$pdescription."', now(), '".$pstartlastdate."', '".$pduration."', '".$pfrequency."', '".$pmanuelcoord."', '".$pgeocoord."', '".$prate."', '".$pstatus."', '".$pid_user."', '".$pid_client."', '".$pid_contact."');";
-    echo $sql;
     $result = $pdo->prepare($sql);
     $result->execute();
     return $pdo->lastInsertId();
@@ -164,8 +162,7 @@ function saveRequirement($ptitle, $pdescription, $pcreationdate, $pstartlastdate
 
 function updateRequirement($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user, $pid_contact) {
     global $pdo;
-    $sql = "UPDATE `requirements` SET `id` = '".$pid."', `title` = '".$ptitle."', `description` = '".$pdescription."', `creationdate` = '".$pcreationdate."', `startlastdate` = '".$pstartlastdate."', `duration` = '".$pduration."', `frequency` = '".$pfrequency."', `manualcoord` = '".$pmanuelcoord."', `geocoord` = '".$pgeocoord."', `rate` = '".$prate."', `status` = '".$pstatus."', `id_user` = '".$pid_user."', `id_client` = '".$pid_client."', `id_contact` = '".$pid_client."' WHERE `id` = ".$pid.";";
-    echo $sql;
+    $sql = "UPDATE `requirements` SET `id` = '".$pid."', `title` = '".$ptitle."', `description` = '".$pdescription."', `startlastdate` = '".$pstartlastdate."', `duration` = '".$pduration."', `frequency` = '".$pfrequency."', `manualcoord` = '".$pmanuelcoord."', `geocoord` = '".$pgeocoord."', `rate` = '".$prate."', `status` = '".$pstatus."', `id_user` = '".$pid_user."', `id_client` = '".$pid_client."', `id_contact` = '".$pid_contact."' WHERE `id` = ".$pid.";";
     $result = $pdo->prepare($sql);
     return $result->execute();
 }

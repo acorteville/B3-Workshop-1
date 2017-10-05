@@ -1,5 +1,5 @@
 <div class="container contentajoutbesoin">
-    <form action="new-requirement.html" method="POST">
+    <form action="<?php echo $action; ?>" method="POST">
         <div class="form-group">
             <select name="client" id="client" required class="form-control">
                 <?php
@@ -36,7 +36,7 @@
                             echo $contact->name . " " . $contact->lastname;
                             echo "</option>";
                         } else {
-                            echo "<option  value='" . $client->id . "' class='clientV'>";
+                            echo "<option  value='" . $contact->id . "' class='clientV'>";
                             echo $contact->name . " " . $contact->lastname;
                             echo "</option>";
                         }
