@@ -19,10 +19,11 @@ class Requirement {
     public $rate;
     public $status;
     public $id_client;
+    public $id_contact;
     public $id_user;
     public $name_client;
     
-    function __construct($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanualcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user)
+    function __construct($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanualcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user, $pid_contact)
     {
         $this->id = $pid;
         $this->title = $ptitle;
@@ -37,6 +38,7 @@ class Requirement {
         $this->status = $pstatus;
         $this->id_client = $pid_client;
         $this->id_user = $pid_user;
+        $this->id_contact = $pid_contact;
         $this->name_client = $this->getClient()->corporatename;
     }
     
@@ -65,11 +67,12 @@ class Requirement {
                 $this->rate, 
                 $this->status, 
                 $this->id_client, 
+                $this->id_contact, 
                 $this->id_user
         );
     }
     
-    public function update($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user) {
+    public function update($pid, $ptitle, $pdescription, $pcreationdate, $pstartlastdate, $pduration, $pfrequency, $pmanuelcoord, $pgeocoord, $prate, $pstatus, $pid_client, $pid_user, $pid_contact) {
         updateRequirement($pid, 
                 $ptitle, 
                 $pdescription, 
@@ -82,7 +85,8 @@ class Requirement {
                 $prate, 
                 $pstatus, 
                 $pid_client, 
-                $pid_user
+                $pid_user,
+                $pid_contact
         );
     }
 

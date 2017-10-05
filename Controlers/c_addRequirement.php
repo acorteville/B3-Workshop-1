@@ -21,7 +21,7 @@ if( !empty($_POST))
    $rate = trim(addslashes ($_POST['rate']));
    $consultantname = trim(addslashes ($_POST['consultantname']));
    $statut = trim(addslashes ($_POST['statut']));
-   $InputFile = trim(addslashes ($_POST['InputFile']));
+   $InputFile = isset($_POST['InputFile']) ? filtre($_POST['InputFile']) : NULL;
    
    /**
     * array (size=15)
@@ -43,7 +43,7 @@ if( !empty($_POST))
 
    try
    {
-       $aRequirement = new Requirement(NULL, $title, $description, NULL, $date, $durationmonths, $durationdaysweek, $location, "", $rate, $statut, $_SESSION['idSession'], 1);
+       $aRequirement = new Requirement(NULL, $title, $description, NULL, $date, $durationmonths, $durationdaysweek, $location, "", $rate, $statut, $client, $_SESSION['idSession'], $contactname);
 
        $id = $aRequirement->save();
        
