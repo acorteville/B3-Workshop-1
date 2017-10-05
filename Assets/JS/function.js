@@ -21,20 +21,20 @@
                         if(result)
                         {
                            //console.log("ok "+id);
-                            var url1 = "Models/m_Models.php";
+                            var url1 = "delete-requirement-"+id+".html";
                             $.ajax({
                               url: url1,
                               type:'POST',
-                              data: {
-                               fonction:'deleteRequirement',
-                               id : id
-                         },
                                success: function(data)
                                {
-                                   console.log(data);
+                                   //console.log(data);
 
-                                   console.log(that);
-                                   that.remove();
+                                   //console.log(that);
+                                   if(data == "true")
+                                   {
+                                       that.remove();
+                                   }
+                                   
                                 }
                              });       
                         }

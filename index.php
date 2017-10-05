@@ -52,6 +52,10 @@ if($idUserConnected) {
             require 'Views/Template/v_bottom.php';
             break;
         
+        case 'c_deleteRequirement':
+            require 'Controlers/c_deleteRequirement.php';
+            break;
+        
         case 'c_addRequirement': // Page d'ajout de Besoin
             require 'Views/Template/v_top.php';
             require 'Views/Template/v_head-new.php';

@@ -201,15 +201,13 @@ if(isset($_POST['fonction']))
     }
 }
 
-function deleteRequirement() {
+function deleteRequirement($pid) {
     global $pdo;
-    $id = $_POST['id'];
-    $sql = "DELETE FROM `requirements` WHERE `requirements`.`id` ='".$id."'";
-    //echo json_encode ($sql);
+    $sql = "DELETE FROM `requirements` WHERE `requirements`.`id` ='".filter($pid)."'";
+    
     //var_dump($pdo);
     $result = $pdo->prepare($sql);
     $result->execute();
-    $result = $result->fetch();
     if($result !== FALSE) {
         echo "true";
         return json_encode("true");
