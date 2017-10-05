@@ -72,7 +72,6 @@ function getClients() {
 function getContacts($pid) {
     global $pdo;
     $sql = "SELECT * FROM `contacts` WHERE `id_client` = ".filter($pid);
-    echo $sql;
     $result = $pdo->prepare($sql);
     $result->execute();
     $contacts = array();
