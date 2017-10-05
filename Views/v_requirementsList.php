@@ -52,10 +52,11 @@
                     <div class="listetri">
                         <form action="" method="post" name="sortby" id="sortby">
                             <select name="sortby" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-DESC.html">Date : Décroissant</option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-ASC.html">Date : Croissant</option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-ASC.html">Titre : Croissant</option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-DESC.html">Titre : Décroissant</option>
+                                <?php var_dump($text); ?>
+                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-DESC.html"><?php echo $text[$language]['datedecreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-ASC.html"><?php echo $text[$language]['dateincreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-ASC.html"><?php echo $text[$language]['titreincreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-DESC.html"><?php echo $text[$language]['titredecreasing']; ?></option>
                             </select>
                         </form>
                     </div>

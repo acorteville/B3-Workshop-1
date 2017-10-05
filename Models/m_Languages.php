@@ -48,6 +48,11 @@ $text['english']['checklogin'] = "Login error : check your email adress";
 $text['english']['Win'] = "Win";
 $text['english']['Lost'] = "Lost";
 $text['english']['Open'] = "Open";
+$text['english']['dateincreasing'] = "Date : increasing";
+$text['english']['datedecreasing'] = "Date : decreasing";
+$text['english']['titreincreasing'] = "Titre : increasing";
+$text['english']['titredecreasing'] = "Titre : decreasing";
+
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -82,4 +87,8 @@ $text['french']['checklogin'] = "Erreur de connexion : vérifiez votre adresse e
 $text['french']['Win'] = "Fini";
 $text['french']['Lost'] = "Annulé";
 $text['french']['Open'] = "Ouvert";
+$text['french']['dateincreasing'] = "Date : croissant";
+$text['french']['datedecreasing'] = "Date : décroissant";
+$text['french']['titreincreasing'] = "Titre : croissant";
+$text['french']['titredecreasing'] = "Titre : décroissant";
 
