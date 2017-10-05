@@ -2,17 +2,53 @@
             <form action="new-requirement.html" method="POST">
                 <div class="form-group">
                     <select name="client" id="client" required class="form-control">
-                        <?php 
-                        foreach ($clients as $client) {
-                            echo "<option  value='".$client->id."' class='clientV'>";
-                            echo $client->corporatename;
-                            echo "</option>";
-                        } ?>
+                        <?php
+                        if(isset($isEditReq)) {
+                            foreach ($clients as $client) {
+                                if($requirement->id_client === $client->id)
+                                {
+                                    echo "<option  value='" . $client->id . "' selected='selected' class='clientV'>";
+                                    echo $client->corporatename;
+                                    echo "</option>";
+                                }
+                                else
+                                {
+                                    echo "<option  value='" . $client->id . "' class='clientV'>";
+                                    echo $client->corporatename;
+                                    echo "</option>";
+                                }
+                            }
+                        }
+                        else {
+                            foreach ($clients as $client) {
+                                echo "<option  value='" . $client->id . "' class='clientV'>";
+                                echo $client->corporatename;
+                                echo "</option>";
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">
                     <select name="contactname" id="contactname"  required class="form-control">
-                        
+                        <?php 
+                            if(isset($isEditReq)) {
+                          /*  foreach ($contacts as $contact) {
+                                if($requirement->id_client === $contact->id)
+                                {
+                                    echo "<option  value='" . $contact->id . "' selected='selected' class='clientV'>";
+                                    echo $contact->corporatename;
+                                    echo "</option>";
+                                }
+                                else
+                                {
+                                    echo "<option  value='" . $client->id . "' class='clientV'>";
+                                    echo $contact->corporatename;
+                                    echo "</option>";
+                                }
+                            } */
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">

@@ -35,7 +35,7 @@ $(document).ready(function () {
     $("i.icontrash").off("click.ad").on("click.ad", function ()
     {
         var id = $(this).attr("id_suppr");
-        var that = $(this).parents("div.list-group-item");
+        var that = $(this).parents("div.col-lg-4");
         //console.log(that);
         bootbox.confirm({
             message: "Voulez-vous vraiment supprimer ce besoin?",
@@ -61,7 +61,7 @@ $(document).ready(function () {
                         {
                             if (data == "true" || data == true)
                             {   
-                                that.remove();
+                                that.fadeOut();
                             }
 
                         }
