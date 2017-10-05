@@ -8,7 +8,23 @@
                     <?php foreach ($requirements as $aRequirement) { ?>                    
                     <li class="list-group-item active listeli" >
                         <div class="statut">
-                            <i class="fa fa-check statuticon fa-2x" aria-hidden="true"></i>
+                            <?php
+                            switch ($aRequirement->status) {
+                                case 'Lost':
+                                    echo '<i class="fa fa-times statuticon fa-2x" aria-hidden="true" style="color: #2a8a1b;"></i>';
+                                break;
+                            
+                                case 'Win':
+                                    echo '<i class="fa fa-check statuticon fa-2x" aria-hidden="true" style="color: #a61919;"></i>';
+                                break;
+
+                                case 'Open':
+                                    echo '<i class="fa fa-folder-open statuticon fa-2x" aria-hidden="true"></i>';
+                                break;
+                            
+                                default:
+                                break;
+                            } ?>
                             <p class="statuttext"><?php echo $aRequirement->status; ?></p>
                             <div class="fix"></div>
                         </div>
