@@ -1,12 +1,13 @@
         <div class="container">
-            <div class="input-group searchbar">
+            <div class="input-group searchbar" style="padding: 22px 0 10px;">
                 <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon2">
                 <span class="input-group-addon" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
             </div>
                 <div class="list-group">
-                <ul class='listeul'>
-                    <?php foreach ($requirements as $aRequirement) { ?>                    
-                    <li class="list-group-item active listeli" >
+                <div  class="row">
+                    <?php foreach ($requirements as $aRequirement) { ?>   
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="list-group-item active listeli" >
                         <div class="statut">
                             <?php
                             switch ($aRequirement->status) {
@@ -40,10 +41,11 @@
                             <div class="fix"></div>
                         </div>
                         <div class="fix"></div>
-                    </li>     
+                    </div>     
+                    </div>     
                     <?php } ?>
-                </ul>
-                <div class="row" style="margin: 0 auto 20px;">
+                </div>
+                <div class="row" style="margin: 20px auto 20px;">
                     <?php if($page > 1) { ?>
                     <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page - 1 ."-".$sort."-".$order; ?>.html" class="button "><?php echo $text[$language]['previous']; ?></a><div class="fix"></div></div>
                     <?php } if(count(getRequirements($page + 1, $nbperpage, $sort)) > 0) { ?>

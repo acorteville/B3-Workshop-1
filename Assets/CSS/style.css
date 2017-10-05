@@ -119,14 +119,12 @@ html, body{
 .listeli{
     background-color: #fff !important;
     color: #17171a !important;
-    margin-bottom: 10px;
     border-color: #fff !important;
     border-radius: 10px;
     font-size: 13px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    
+    
+    margin: 12px 0 12px;
 }
 
 .list-group {
@@ -140,8 +138,12 @@ html, body{
 }
 .titleclient{
     display: inline-block;
-    min-width: 150px;
 }
+
+.col-md-6 .titleclient {
+    max-width: 50%;
+}
+
 .tittleRequirement{
     display:block;
     

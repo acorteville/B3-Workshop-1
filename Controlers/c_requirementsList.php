@@ -1,4 +1,4 @@
 <?php
-$nbperpage = 9;
+$nbperpage = 15;
 $requirements = getRequirements($page, $nbperpage, $sort, $order);
 require 'Views/v_requirementsList.php';
