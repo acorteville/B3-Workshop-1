@@ -12,16 +12,20 @@ Le module Apache2 Rewrite est nécessaire au bon fonctionnement de l'application
 Dans le fichier index.php la ligne “ DEFINE('BASESITE', '*****'); ” permet de définir le chemin vers
 l'application depuis le repertoire racine d'Apache2.
 
+# Installation :
 
+Il est nécessaire d'avoir un serveur WAMP/LAMP/XAMP et de créer une base de donnée "projet-gfi" en utilisant le fichier database.sql. Sur phpMyadmin, il est nécessaire d'avoir un utilisateur "root" avec le mot de passe "root". 
+
+# Exemple de code PHP :
 
 Création d'un besoin
-$aRequirement = new Requirement(NULL, "Test", "Description", NULL, NULL, 4, 2, "1234567", "1234567", 1234.9, "Win", 1, 1, 1);
+$aRequirement = new Requirement(NULL, "Test", "Description", NULL, NULL, 4, 2, "1234567", "1234567", 1234.9, "Win", 1, 1, 1, 1);
 
 Sauvegarde d'un besoin
 $aRequirement->save();
 
 Mise à jour d'un besoin
-$aRequirement->update(6, "Nouveau titre", "Nouvelle description", NULL, NULL, 6, 5, "6 Rue de la Gare, 59000 Lille, FRANCE", "12345, 12345", 3000.0, "Open", 1, 1, 1);
+$aRequirement->update(6, "Nouveau titre", "Nouvelle description", NULL, NULL, 6, 5, "6 Rue de la Gare, 59000 Lille, FRANCE", "12345, 12345", 3000.0, "Open", 1, 1, 1, 4);
 
 
 Création d'une clé
