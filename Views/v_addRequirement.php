@@ -73,9 +73,43 @@
         </div>
         <div class="form-group">
             <select name="statut" required class="form-control">
-                <option value="Open">Open</option>
-                <option value="Win">Win</option>
-                <option value="Lost">Lost</option>
+              <?php
+                if(isset($isEditReq))
+                {
+                    switch (@$requirement->status) {
+                        case "Open" :
+                             echo ' 
+                                <option selected="selected" value="Open">Open</option>
+                                <option value="Win">Win</option>
+                                <option value="Lost">Lost</option>';
+                            break;
+                        case "Win" :
+                             echo ' 
+                                <option value="Open">Open</option>
+                                <option selected="selected" value="Win">Win</option>
+                                <option  value="Lost">Lost</option>';
+                            break;
+                        case "Lost" :
+                             echo ' 
+                                <option value="Open">Open</option>
+                                <option value="Win">Win</option>
+                                <option selected="selected" value="Lost">Lost</option>';
+                            break;
+
+                        default:
+                            echo ' 
+                                <option value="Open">Open</option>
+                                <option value="Win">Win</option>
+                                <option value="Lost">Lost</option>';
+                            break;
+                    }
+                } else {
+                    ?>
+                        <option value="Open">Open</option>
+                        <option value="Win">Win</option>
+                        <option value="Lost">Lost</option>
+                    <?php }
+                    ?>
             </select>
         </div>
         <div class="form-group">
