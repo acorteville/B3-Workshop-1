@@ -44,6 +44,7 @@ $text['english']['next'] = "Next";
 $text['english']['previous'] = "Previous";
 $text['english']['home'] = "Home";
 $text['english']['editrequirement'] = "Requirement Edition";
+$text['english']['checklogin'] = "Login error : check your email adress";
 
 
 $text['french']['site_title'] = "Site Internet GFI";
@@ -74,4 +75,5 @@ $text['french']['next'] = "Suivant";
 $text['french']['previous'] = "Précédent";
 $text['french']['home'] = "Accueil";
 $text['french']['editrequirement'] = "Édition d'un Besoin";
+$text['french']['checklogin'] = "Erreur de connexion : vérifiez votre adresse email";
 

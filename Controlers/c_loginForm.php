@@ -1,4 +1,5 @@
 <?php
+$error = FALSE;
 if(isset($_POST['email']) && $_POST['email'] != "")
 {    
     $userConnected = loginUser($_POST['email']."@gfi.com");
@@ -8,7 +9,7 @@ if(isset($_POST['email']) && $_POST['email'] != "")
         $_SESSION['idSession'] = $userConnected->id;
         header('Location: '.BASESITE);
     } else {
-        echo "Error";
+        $error = TRUE;
     }
     
 }

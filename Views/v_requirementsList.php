@@ -11,11 +11,11 @@
                             <?php
                             switch ($aRequirement->status) {
                                 case 'Lost':
-                                    echo '<i class="fa fa-times statuticon fa-2x" aria-hidden="true" style="color: #2a8a1b;"></i>';
+                                    echo '<i class="fa fa-times statuticon fa-2x" aria-hidden="true" style="color: #a61919;"></i>';
                                 break;
                             
                                 case 'Win':
-                                    echo '<i class="fa fa-check statuticon fa-2x" aria-hidden="true" style="color: #a61919;"></i>';
+                                    echo '<i class="fa fa-check statuticon fa-2x" aria-hidden="true" style="color: #2a8a1b;"></i>';
                                 break;
 
                                 case 'Open':

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mar. 03 oct. 2017 à 15:25
+-- Généré le :  jeu. 05 oct. 2017 à 12:21
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.1
 
@@ -34,7 +34,7 @@ INSERT INTO `clients` (`id`, `corporatename`) VALUES
 (2, 'CROQUE GEL'),
 (3, 'ATOS'),
 (4, 'AIRBUS'),
-(5, 'TRANSPOLE'),
+(5, 'TRANSPOLE');
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,6 @@ INSERT INTO `keys` (`id_requirement`, `id`, `successfactors`) VALUES
 (4, 4, 'je test bananananana'),
 (5, 5, 'je test poirreeeeee');
 
-
 -- --------------------------------------------------------
 
 --
@@ -154,11 +153,18 @@ CREATE TABLE `requirements` (
 --
 
 INSERT INTO `requirements` (`id`, `title`, `description`, `creationdate`, `startlastdate`, `duration`, `frequency`, `manualcoord`, `geocoord`, `rate`, `status`, `id_user`, `id_client`) VALUES
-(1, 'AZERTY', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, 'AZERTY', 'AZERTY', 1234.99, 'Open', 1, 2),
-(4, 'Test', 'Description', '0000-00-00 00:00:00', '0000-00-00', 4, 2, '1234567', '1234567', 1234.9, 'Win', 1, 1),
-(5, 'Test', 'Description', '0000-00-00 00:00:00', '0000-00-00', 4, 2, '1234567', '1234567', 1234.9, 'Win', 1, 1),
-(6, 'Nouveau titre', 'Nouvelle description', '0000-00-00 00:00:00', '0000-00-00', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', '12345, 12345', 3000, 'Open', 1, 1),
-(7, 'Test', 'Description', '2017-10-03 13:58:28', '0000-00-00', 4, 2, '1234567', '1234567', 1234.9, 'Win', 1, 1);
+(1, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2),
+(4, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1),
+(5, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1),
+(6, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4),
+(7, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5),
+(8, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3),
+(9, 'Création de Croque Express', 'AZERTY', '2017-10-03 00:00:00', '2017-10-27', 5, 3, '12 Rue du Pont, 59000 Lille, FRANCE', 'NULL', 965, 'Open', 1, 2),
+(10, 'Aménagement des trains', 'Description', '2017-10-05 09:00:00', '2017-10-12', 4, 2, '1234567', 'NULL', 754, 'Win', 4, 1),
+(11, 'Rénovation des trains', 'Description', '2017-10-02 00:00:00', '2017-10-18', 4, 2, '1234567', 'NULL', 234, 'Lost', 4, 1),
+(12, 'Réparation A380', 'Nouvelle description', '2017-09-12 00:00:00', '2017-10-24', 6, 5, '6 Rue de la Gare, 59000 Lille, FRANCE', 'NULL', 3000, 'Open', 2, 4),
+(13, 'Révision du service métro', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 5, 5),
+(14, 'Création ERP / CRM', 'Description', '2017-10-03 13:58:28', '2017-10-31', 4, 2, '1234567', 'NULL', 1234.9, 'Win', 3, 3);
 
 -- --------------------------------------------------------
 
@@ -179,11 +185,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `password`) VALUES
-(1, 'BAUDUIN', 'Lucas', 'bauduin.lucas@gfi.com'),
-(2, 'BARTHOLOME', 'Pierre-Henry', 'bartholome.pierre-henry@gfi.com'),
-(3, 'RIVET', 'Arnaud', 'rivet.arnaud@gfi.com'),
-(4, 'DUBUS', 'Alexis', 'dubus.alexis@gfi.com'),
-(5, 'GHERISSI', 'Vianney', 'gherissi.vianney@gfi.com');
+(1, 'BAUDUIN', 'Lucas', 'lucas.bauduin@gfi.com', ''),
+(2, 'BARTHOLOME', 'Pierre-Henry', 'pierre-henry.bartholome@gfi.com', ''),
+(3, 'RIVET', 'Arnaud', 'arnaud.rivet@gfi.com', ''),
+(4, 'DUBUS', 'Alexis', 'alexis.dubus@gfi.com', ''),
+(5, 'GHERISSI', 'Vianney', 'vianney.gherissi@gfi.com', '');
+
 --
 -- Index pour les tables déchargées
 --
@@ -251,7 +258,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `consultants`
 --
@@ -261,7 +268,7 @@ ALTER TABLE `consultants`
 -- AUTO_INCREMENT pour la table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `files`
 --
@@ -271,17 +278,17 @@ ALTER TABLE `files`
 -- AUTO_INCREMENT pour la table `keys`
 --
 ALTER TABLE `keys`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `requirements`
 --
 ALTER TABLE `requirements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Contraintes pour les tables déchargées
 --
