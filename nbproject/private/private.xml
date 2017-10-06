@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Views/Template/v_foot.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Views/Template/v_head-new.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Controlers/c_loginForm.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Views/v_addRequirement.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Models/m_Models.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Views/Template/v_bottom.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Models/m_Languages.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Controlers/c_changeLanguage.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Assets/CSS/style.css</file>
+            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/WebServices/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/database.sql</file>
+            <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Assets/JS/function.js</file>
             <file>file:/Applications/MAMP/htdocs/epsi/B3-Workshop-1/Views/v_requirementsList.php</file>
         </group>
     </open-files>
