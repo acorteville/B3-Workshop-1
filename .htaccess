@@ -2,11 +2,11 @@ RewriteEngine On
 
 ErrorDocument 404 /epsi/B3-Workshop-1/404.php
 
-RewriteRule ^logout\.html$ ?control=c_logout
-RewriteRule ^new-requirement\.html$ ?control=c_addRequirement
-RewriteRule ^edit-requirement-([0-9]+)\.html$ ?control=c_editRequirement&id=$1
-RewriteRule ^delete-requirement-([0-9]+)\.html$ ?control=c_deleteRequirement&id=$1
+RewriteRule "^logout/$" ?control=c_logout
+RewriteRule "^new-requirement/$" ?control=c_addRequirement
+RewriteRule "^edit-requirement/([0-9]+)$" ?control=c_editRequirement&id=$1
+RewriteRule "^delete-requirement/([0-9]+)$" ?control=c_deleteRequirement&id=$1
 RewriteRule ^lang-([a-z]+)\.html$ ?control=c_changeLanguage&lang=$1
 
-RewriteRule ^requirement-list-([0-9]+)\.html$ ?control=c_home&page=$1
-RewriteRule ^requirement-list-([0-9]+)-([a-z0-9\-]+)-([a-zA-Z0-9\-]+)\.html$ ?control=c_home&page=$1&sort=$2&order=$3
+RewriteRule "^requirement-list/([0-9]+)$" ?control=c_home&page=$1
+RewriteRule "^requirement-list/([0-9]+)/([a-z0-9\-]+)/([a-zA-Z0-9\-]+)$" ?control=c_home&page=$1&sort=$2&order=$3

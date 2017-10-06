@@ -78,7 +78,7 @@ $(document).ready(function () {
                 if (result)
                 {
                     //console.log("ok "+id);
-                    var url1 = "delete-requirement-" + id + ".html";
+                    var url1 = "delete-requirement/" + id;
                     $.ajax({
                         url: url1,
                         type: 'POST',

@@ -19,7 +19,7 @@
     <body>
         <div class="header">
             <h5 class="listetitle">Erreur 404  
-            <a href="logout.html" title="logout"><i class="fa fa-power-off btndisconnect" aria-hidden="true"></i></a>
+            <a href="logout/" title="logout"><i class="fa fa-power-off btndisconnect" aria-hidden="true"></i></a>
             <a href="index.php"><i class="fa fa-home btnajout" aria-hidden="true"></i></a></h5>
             
         </div>

@@ -36,7 +36,7 @@
                         </div>
                         <div class="listeboutton">
                             <p class="daterequirement"><?php echo formatDate($aRequirement->creationdate); ?></p>
-                            <a href="<?php echo BASESITE."edit-requirement-".$aRequirement->id.".html"; ?>"><i class="fa fa-pencil iconpencil fa-2x" aria-hidden="true"></i></a>
+                            <a href="<?php echo BASESITE."edit-requirement/".$aRequirement->id; ?>"><i class="fa fa-pencil iconpencil fa-2x" aria-hidden="true"></i></a>
                             <i id_suppr="<?php echo $aRequirement->id; ?>" class="fa fa-trash icontrash fa-2x" aria-hidden="true"></i>
                             <div class="fix"></div>
                         </div>
@@ -47,21 +47,21 @@
                 </div>
                 <div class="row" style="margin: 20px auto 20px; text-align: center">
                     <?php if($page > 1) { ?>
-                    <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page - 1 ."-".$sort."-".$order; ?>.html" class="button "><?php echo $text[$language]['previous']; ?></a><div class="fix"></div></div>
+                    <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list/<?php echo $page - 1 ."/".$sort."/".$order; ?>" class="button "><?php echo $text[$language]['previous']; ?></a><div class="fix"></div></div>
                     <?php } ?>
 
                     <?php if(count(getRequirements($page + 1, $nbperpage, $sort)) > 0) { ?>
-                        <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list-<?php echo $page + 1 ."-".$sort."-".$order; ?>.html" class="button"><?php echo $text[$language]['next']; ?></a><div class="fix"></div></div>                        
+                        <div class="col" style="text-align: center;"><a href="<?php echo BASESITE; ?>requirement-list/<?php echo $page + 1 ."/".$sort."/".$order; ?>" class="button"><?php echo $text[$language]['next']; ?></a><div class="fix"></div></div>                        
                     <?php } ?>
                         <div class="fix"></div>
                         <div class="listetri" style="margin: 20px auto 0; width: 320px;">
                         <form action="" method="post" name="sortby" id="sortby">
                             <select name="sortby" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                                <?php var_dump($text); ?>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-DESC.html"><?php echo $text[$language]['datedecreasing']; ?></option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-creationdate-ASC.html"><?php echo $text[$language]['dateincreasing']; ?></option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-ASC.html"><?php echo $text[$language]['titreincreasing']; ?></option>
-                                <option value="<?php echo BASESITE; ?>requirement-list-1-title-DESC.html"><?php echo $text[$language]['titredecreasing']; ?></option>
+                                <?php //var_dump($text); ?>
+                                <option value="<?php echo BASESITE; ?>requirement-list/1/creationdate/DESC"><?php echo $text[$language]['datedecreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list/1/creationdate/ASC"><?php echo $text[$language]['dateincreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list/1/title/ASC"><?php echo $text[$language]['titreincreasing']; ?></option>
+                                <option value="<?php echo BASESITE; ?>requirement-list/1/title/DESC"><?php echo $text[$language]['titredecreasing']; ?></option>
                             </select>
                         </form>
                     </div>
